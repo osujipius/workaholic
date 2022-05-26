@@ -1,9 +1,17 @@
-function App() {
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/molecules/Header.js";
+import Home from "./pages/Home.js";
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Empty repo</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
-
-export default App;
