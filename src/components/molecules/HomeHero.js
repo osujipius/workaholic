@@ -72,7 +72,11 @@ export default function HomeHero() {
               justifyContent: "center",
             }}
           >
-            <img style={{ height: "100%", width: "95%" }} src={HeroImg} />
+            <img
+              style={{ height: "100%", width: "95%" }}
+              src={HeroImg}
+              alt="Hero-Img"
+            />
           </Box>
         </Box>
       </Container>
