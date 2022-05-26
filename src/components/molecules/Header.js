@@ -144,7 +144,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
-              <HomeButton text="Find Work" />
+              <HomeButton text="Jobs" />
             </Box>
           </Toolbar>
         </Container>
