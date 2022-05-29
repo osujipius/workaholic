@@ -36,7 +36,7 @@ export default function HomeHero() {
               sx={{
                 fontFamily: "'Bebas Neue', cursive",
                 color: "#14a800",
-                fontSize: { md: "5rem", xs: "2.5rem" },
+                fontSize: { md: "5rem", xs: "2.7rem" },
               }}
             >
               The Best Jobs all in one Place
