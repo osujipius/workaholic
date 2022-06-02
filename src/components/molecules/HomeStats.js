@@ -65,11 +65,17 @@ export default function HomeStats() {
             p: 2,
           }}
         >
-          <img
-            style={{ height: "400px", width: "45%" }}
-            src={StatsImg}
-            alt="stat-img"
-          />
+          <Box
+            sx={{
+              width: { xs: "40%" },
+            }}
+          >
+            <img
+              style={{ height: "90%", width: "95%" }}
+              src={StatsImg}
+              alt="stat-img"
+            />
+          </Box>
           <Box>
             <Typography
               variant="h4"
