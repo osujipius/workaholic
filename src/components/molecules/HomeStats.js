@@ -71,8 +71,7 @@ export default function HomeStats() {
         >
           <Box
             sx={{
-              width: { xs: "40%" },
-              height: { xs: "90%" },
+              width: { xs: "43%" },
             }}
           >
             <img
