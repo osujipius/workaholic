@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import BannerImg from "./../../assets/bannerimg.jpg";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
 
 export default function HomeBanner() {
   return (
@@ -22,6 +23,7 @@ export default function HomeBanner() {
             background: "#2a51be",
             color: "#fff",
             p: 3,
+            pb: 5,
             borderTopLeftRadius: "10px",
             borderTopRightRadius: { xs: "10px", md: 0 },
             borderBottomLeftRadius: { md: "10px", xs: 0 },
@@ -55,14 +57,39 @@ export default function HomeBanner() {
             sx={{
               color: "#fff",
               background: "#fff",
-              mt: 10,
+              mt: 25,
             }}
           />
+          <Grid container spacing={2} sx={{ height: "auto" }}>
+            <Grid item lg={4} md={6}>
+              <Typography
+                variant="p"
+                sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
+              >
+                Find opportunities for every stage of your career
+              </Typography>
+            </Grid>
+            <Grid item lg={4} md={6}>
+              <Typography
+                variant="p"
+                sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
+              >
+                Control when, where, and how you work
+              </Typography>
+            </Grid>
+            <Grid item lg={4} md={6}>
+              <Typography
+                variant="p"
+                sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
+              >
+                Explore different ways to earn
+              </Typography>
+            </Grid>
+          </Grid>
         </Box>
         <Box
           sx={{
             flex: 1,
-            borderTopRightRadius: { md: "10px", xs: 0 },
           }}
         >
           <img

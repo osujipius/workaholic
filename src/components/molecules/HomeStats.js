@@ -26,6 +26,8 @@ export default function HomeStats() {
             background: "#f1f2f4",
             flex: 1,
             borderRadius: "10px",
+            borderBottomRightRadius: { md: "10px", xs: 0 },
+            borderBottomLeftRadius: { md: "10px", xs: 0 },
             p: 2,
           }}
         >
@@ -34,7 +36,7 @@ export default function HomeStats() {
             sx={{
               fontFamily: "'Lexend Deca', sans-serif",
               fontWeight: 500,
-              fontSize: { md: "3rem", xs: "1.8rem" },
+              fontSize: { md: "2.8rem", xs: "1.7rem" },
             }}
           >
             Why talents turn to Workaholic
@@ -60,6 +62,8 @@ export default function HomeStats() {
           sx={{
             flex: 1,
             borderRadius: "10px",
+            borderTopRightRadius: { md: "10px", xs: 0 },
+            borderTopLeftRadius: { md: "10px", xs: 0 },
             background: "#14a800",
             display: "flex",
             p: 2,

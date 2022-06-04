@@ -5,23 +5,21 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Star } from "@mui/icons-material";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
+<Box
+  component="span"
+  sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+>
+  •
+</Box>;
 
 export default function BasicCard({ categoryName, categoryRating, jobCount }) {
   return (
     <Card
       sx={{
         width: "15em",
-        minWidth: { xs: "10em", md: "20em" },
+        minWidth: { xs: "10em", md: "19em" },
         background: "#f2f7f2",
-        margin: "1em ",
+        margin: { md: "1em 1em", xs: "1em 0" },
         padding: "1em",
         cursor: "pointer",
         borderRadius: "10px",
@@ -37,6 +35,7 @@ export default function BasicCard({ categoryName, categoryRating, jobCount }) {
           sx={{
             fontWeight: "bold",
             fontFamily: "Merriweather",
+            fontSize: 20,
           }}
         >
           {categoryName}

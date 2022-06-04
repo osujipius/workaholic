@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 import CategoryCard from "../atoms/CategoryCard";
 
@@ -12,9 +12,10 @@ function HomeJobCategory() {
             mt: "2em",
             fontFamily: "Merriweather",
             fontWeight: "bold",
+            fontSize: { md: "3rem", xs: "1.6rem" },
           }}
         >
-          Browse talent by category
+          Browse work by category
         </Typography>
         <Typography variant="h6" color="text.secondary" sx={{ mb: "2em" }}>
           Looking for work ? {""}
@@ -39,6 +40,7 @@ function HomeJobCategory() {
           flexDirection: { xs: "column", md: "row" },
           flexWrap: "wrap",
           justifyContent: "space-around",
+          alignItems: "center",
         }}
       >
         <CategoryCard
