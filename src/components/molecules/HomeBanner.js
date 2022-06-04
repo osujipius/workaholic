@@ -5,6 +5,7 @@ import BannerImg from "./../../assets/bannerimg.jpg";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
+import HomeButton from "../atoms/HomeButton.js";
 
 export default function HomeBanner() {
   return (
@@ -57,10 +58,10 @@ export default function HomeBanner() {
             sx={{
               color: "#fff",
               background: "#fff",
-              mt: 25,
+              mt: { md: 25, xs: 15 },
             }}
           />
-          <Grid container spacing={2} sx={{ height: "auto" }}>
+          <Grid container spacing={2} sx={{ height: "auto", mt: 2 }}>
             <Grid item lg={4} md={6}>
               <Typography
                 variant="p"
@@ -86,6 +87,14 @@ export default function HomeBanner() {
               </Typography>
             </Grid>
           </Grid>
+          <HomeButton
+            text="Find Opportunities"
+            style={{
+              background: "#fff",
+              color: "#2a51be",
+              marginTop: "20px",
+            }}
+          />
         </Box>
         <Box
           sx={{
