@@ -1,38 +1,40 @@
 import { Container, Typography } from "@mui/material";
-import React from "react";
 import CategoryCard from "../atoms/CategoryCard";
+import { FadeIn } from "../atoms/FadeIn.js";
 
 function HomeJobCategory() {
   return (
     <>
       <Container>
-        <Typography
-          variant="h3"
-          sx={{
-            mt: "2em",
-            fontFamily: "Merriweather",
-            fontWeight: "bold",
-            fontSize: { md: "3rem", xs: "1.6rem" },
-          }}
-        >
-          Browse work by category
-        </Typography>
-        <Typography variant="h6" color="text.secondary" sx={{ mb: "2em" }}>
-          Looking for work ? {""}
+        <FadeIn>
           <Typography
-            variant="span"
-            color="#14A800"
+            variant="h3"
             sx={{
-              "&:hover": {
-                color: "darkgreen",
-                cursor: "pointer",
-                textDecoration: "underline",
-              },
+              mt: "2em",
+              fontFamily: "Merriweather",
+              fontWeight: "bold",
+              fontSize: { md: "3rem", xs: "1.6rem" },
             }}
           >
-            Browse Jobs
+            Browse work by category
           </Typography>
-        </Typography>
+          <Typography variant="h6" color="text.secondary" sx={{ mb: "2em" }}>
+            Looking for work ? {""}
+            <Typography
+              variant="span"
+              color="#14A800"
+              sx={{
+                "&:hover": {
+                  color: "darkgreen",
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              Browse Jobs
+            </Typography>
+          </Typography>
+        </FadeIn>
       </Container>
       <Container
         sx={{

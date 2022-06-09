@@ -1,9 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import HeroImg from "./../../assets/heroimg1.jpg";
+import HeroImg from "../../assets/heroimg2.svg";
 import Typography from "@mui/material/Typography";
 import HomeButton from "../atoms/HomeButton";
+import { FadeIn } from "./../atoms/FadeIn.js";
 
 export default function HomeHero() {
   return (
@@ -31,38 +32,44 @@ export default function HomeHero() {
               mt: { xs: "1em", md: "0" },
             }}
           >
-            <Typography
-              variant="h1"
-              sx={{
-                fontFamily: "'Bebas Neue', cursive",
-                color: "#14a800",
-                fontSize: { md: "5rem", xs: "2.7rem" },
-              }}
-            >
-              The Best Jobs all in one Place
-            </Typography>
-            <Typography
-              variant="p"
-              sx={{
-                fontSize: { md: "22px", xs: "19px" },
-                lineHeight: "26px",
-                letterSpacing: "-.002em",
-                fontWeight: 500,
-                fontFamily: "'Lexend Deca', sans-serif",
-                color: "#5e6d55",
-              }}
-            >
-              Forget the old rules. You can have the best people. Right now.
-              Right here.
-            </Typography>
-            <HomeButton
-              text="Find Work"
-              style={{
-                padding: "0.8em 2em",
-                background: "#14a800",
-                margin: "2em 0",
-              }}
-            />
+            <FadeIn>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontFamily: "'Bebas Neue', cursive",
+                  color: "#14a800",
+                  fontSize: { md: "5rem", xs: "2.7rem" },
+                }}
+              >
+                The Best Jobs all in one Place
+              </Typography>
+            </FadeIn>
+            <FadeIn>
+              <Typography
+                variant="p"
+                sx={{
+                  fontSize: { md: "22px", xs: "19px" },
+                  lineHeight: "26px",
+                  letterSpacing: "-.002em",
+                  fontWeight: 500,
+                  fontFamily: "'Lexend Deca', sans-serif",
+                  color: "#5e6d55",
+                }}
+              >
+                Forget the old rules. You can have the best people. Right now.
+                Right here.
+              </Typography>
+            </FadeIn>
+            <FadeIn>
+              <HomeButton
+                text="Find Work"
+                style={{
+                  padding: "0.8em 2em",
+                  background: "#14a800",
+                  margin: "2em 0",
+                }}
+              />
+            </FadeIn>
           </Box>
           <Box
             sx={{

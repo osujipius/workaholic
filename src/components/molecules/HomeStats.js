@@ -9,117 +9,120 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import StatsImg from "./../../assets/statsimg.png";
 import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import { FadeIn } from "../atoms/FadeIn.js";
 
 export default function HomeStats() {
   return (
     <>
-      <Container
-        sx={{
-          height: "auto",
-          mt: 15,
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-        }}
-      >
-        <Box
+      <FadeIn>
+        <Container
           sx={{
-            background: "#f1f2f4",
-            flex: 1,
-            borderRadius: "10px",
-            borderBottomRightRadius: { md: "10px", xs: 0 },
-            borderBottomLeftRadius: { md: "10px", xs: 0 },
-            p: 2,
-          }}
-        >
-          <Typography
-            variant="h3"
-            sx={{
-              fontFamily: "'Lexend Deca', sans-serif",
-              fontWeight: 500,
-              fontSize: { md: "2.8rem", xs: "1.7rem" },
-            }}
-          >
-            Why talents turn to Workaholic
-          </Typography>
-
-          <StatItem
-            title="Job Opportunities"
-            icon={<StarsIcon />}
-            info="We provide an unlimited pool of jobs for talented individuals in every field possible"
-          />
-          <StatItem
-            title="Totally Free"
-            icon={<MonetizationOnIcon />}
-            info="Application process and interview scheduling are all cost free"
-          />
-          <StatItem
-            title="Safe & Secure"
-            icon={<CheckCircleIcon />}
-            info="Focus on your work knowing we help protect your data and privacy. We’re here with 24/7 support if you need it"
-          />
-        </Box>
-        <Box
-          sx={{
-            flex: 1,
-            borderRadius: "10px",
-            borderTopRightRadius: { md: "10px", xs: 0 },
-            borderTopLeftRadius: { md: "10px", xs: 0 },
-            background: "#14a800",
+            height: "auto",
+            mt: 15,
             display: "flex",
-            p: 2,
+            flexDirection: { xs: "column", md: "row" },
           }}
         >
           <Box
             sx={{
-              width: { xs: "43%" },
+              background: "#f1f2f4",
+              flex: 1,
+              borderRadius: "10px",
+              borderBottomRightRadius: { md: "10px", xs: 0 },
+              borderBottomLeftRadius: { md: "10px", xs: 0 },
+              p: 2,
             }}
           >
-            <img
-              style={{ height: "90%", width: "95%" }}
-              src={StatsImg}
-              alt="stat-img"
-            />
-          </Box>
-          <Box>
             <Typography
-              variant="h4"
+              variant="h3"
               sx={{
                 fontFamily: "'Lexend Deca', sans-serif",
-                textAlign: "center",
                 fontWeight: 500,
-                fontSize: { md: "2rem", xs: "1.5rem" },
-                color: "#fff",
-                mt: 10,
+                fontSize: { md: "2.8rem", xs: "1.7rem" },
               }}
             >
-              We’re the world’s work marketplace
+              Why talents turn to Workaholic
             </Typography>
-            <StatItem
-              style={{ color: "#fff" }}
-              title="4.9/5 Employer Rate"
-              icon={
-                <StarIcon
-                  style={{
-                    fontSize: "35px",
-                  }}
-                />
-              }
-            />
 
             <StatItem
-              style={{ color: "#fff" }}
-              title="G'2s Award Winner"
-              icon={
-                <EmojiEventsIcon
-                  style={{
-                    fontSize: "35px",
-                  }}
-                />
-              }
+              title="Job Opportunities"
+              icon={<StarsIcon />}
+              info="We provide an unlimited pool of jobs for talented individuals in every field possible"
+            />
+            <StatItem
+              title="Totally Free"
+              icon={<MonetizationOnIcon />}
+              info="Application process and interview scheduling are all cost free"
+            />
+            <StatItem
+              title="Safe & Secure"
+              icon={<CheckCircleIcon />}
+              info="Focus on your work knowing we help protect your data and privacy. We’re here with 24/7 support if you need it"
             />
           </Box>
-        </Box>
-      </Container>
+          <Box
+            sx={{
+              flex: 1,
+              borderRadius: "10px",
+              borderTopRightRadius: { md: "10px", xs: 0 },
+              borderTopLeftRadius: { md: "10px", xs: 0 },
+              background: "#14a800",
+              display: "flex",
+              p: 2,
+            }}
+          >
+            <Box
+              sx={{
+                width: { xs: "43%" },
+              }}
+            >
+              <img
+                style={{ height: "90%", width: "95%" }}
+                src={StatsImg}
+                alt="stat-img"
+              />
+            </Box>
+            <Box>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontFamily: "'Lexend Deca', sans-serif",
+                  textAlign: "center",
+                  fontWeight: 500,
+                  fontSize: { md: "2rem", xs: "1.5rem" },
+                  color: "#fff",
+                  mt: 10,
+                }}
+              >
+                We’re the world’s work marketplace
+              </Typography>
+              <StatItem
+                style={{ color: "#fff" }}
+                title="4.9/5 Employer Rate"
+                icon={
+                  <StarIcon
+                    style={{
+                      fontSize: "35px",
+                    }}
+                  />
+                }
+              />
+
+              <StatItem
+                style={{ color: "#fff" }}
+                title="G'2s Award Winner"
+                icon={
+                  <EmojiEventsIcon
+                    style={{
+                      fontSize: "35px",
+                    }}
+                  />
+                }
+              />
+            </Box>
+          </Box>
+        </Container>
+      </FadeIn>
     </>
   );
 }
