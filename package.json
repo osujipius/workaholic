@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.4.5",
     "react-waypoint": "^10.3.0",
+    "swiper": "^8.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
