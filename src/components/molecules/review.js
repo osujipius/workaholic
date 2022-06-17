@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from "swiper";
 /* Swiper CSS */
 import "swiper/css";
 import "swiper/css/pagination";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 function Review() {
   return (
