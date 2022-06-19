@@ -10,9 +10,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import HomeButton from "../atoms/HomeButton";
-import SubHeader from "../atoms/SubHeader";
+import { Link } from "react-router-dom";
 
-const pages = ["Find Work", "Why Workaholic", "Blog", "Trending Skills"];
+const pages = ["Work", "About", "Blog", "Trending"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -92,7 +92,12 @@ const ResponsiveAppBar = () => {
                     <Typography
                       sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
                     >
-                      {page}
+                      <Link
+                        style={{ textDecoration: "none", color: "#5e6d55" }}
+                        to={`/${page}`}
+                      >
+                        {page}
+                      </Link>
                     </Typography>
                   </MenuItem>
                 ))}
@@ -102,7 +107,7 @@ const ResponsiveAppBar = () => {
               variant="h4"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 mr: 2,
                 mt: 1,
@@ -137,9 +142,18 @@ const ResponsiveAppBar = () => {
                     fontSize: "16px",
                     fontFamily: "'Lexend Deca', sans-serif",
                     textTransform: "capitalize",
+
+                    "&:hover": {
+                      background: "#93ed87",
+                    },
                   }}
                 >
-                  {page}
+                  <Link
+                    style={{ textDecoration: "none", color: "#5e6d55" }}
+                    to={`/${page}`}
+                  >
+                    {page}
+                  </Link>
                 </Button>
               ))}
             </Box>
@@ -149,7 +163,6 @@ const ResponsiveAppBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <SubHeader />
     </>
   );
 };

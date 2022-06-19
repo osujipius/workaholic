@@ -13,13 +13,7 @@ function Footer() {
                 <a href="#">about us</a>
               </li>
               <li>
-                <a href="#">our services</a>
-              </li>
-              <li>
-                <a href="#">privacy policy</a>
-              </li>
-              <li>
-                <a href="#">affiliate program</a>
+                <a href="#">Jobs</a>
               </li>
             </ul>
           </div>
@@ -27,16 +21,13 @@ function Footer() {
             <h4>get help</h4>
             <ul>
               <li>
-                <a href="#">FAQ</a>
-              </li>
-              <li>
                 <a href="#">Contact Us</a>
               </li>
               <li>
-                <a href="#">returns</a>
+                <a href="#">Make a request</a>
               </li>
               <li>
-                <a href="#">order status</a>
+                <a href="#">File a complaint</a>
               </li>
             </ul>
           </div>

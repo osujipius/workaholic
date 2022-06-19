@@ -6,8 +6,8 @@ function ReviewCard({ name, description, occupation, avatarImage }) {
   return (
     <Box
       sx={{
-        width: { xs: "13em", xl: "25em" },
-        minHeight: "320px",
+        width: { xs: "13em", xl: "24em" },
+        minHeight: "310px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -16,9 +16,10 @@ function ReviewCard({ name, description, occupation, avatarImage }) {
         boxSizing: "content-box",
         padding: { xs: "30px 2em", md: "30px 2em" },
         boxShadow:
-          "0px 10px 10px 10px rgba(1, 41, 112, 0.08), 10px -10px 5px 0px rgba(1, 41, 112, 0.08)",
+          "0px 10px 10px 10px rgba(1, 41, 112, 0.08), 7px -9px 4px 0px rgba(1, 41, 112, 0.08)",
         textAlign: "center",
         margin: { xs: "0 0em 5em -2.0em", sm: "0 em 5em 0em" },
+        borderRadius: "10px",
         transition: "0.5s",
         cursor: "pointer",
         "&:hover": {

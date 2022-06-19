@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import HeroImg from "../../assets/heroimg2.svg";
 import Typography from "@mui/material/Typography";
 import HomeButton from "../atoms/HomeButton";
-import { FadeIn } from "./../atoms/FadeIn.js";
+import { FadeIn } from "../helperFunctions/FadeIn.js";
 
 export default function HomeHero() {
   return (

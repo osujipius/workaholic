@@ -20,6 +20,7 @@ function Review() {
             fontSize: "2rem",
             fontFamily: "Merriweather",
             fontWeight: "bold",
+            textAlign: "center",
           }}
         >
           What People Say About Us
@@ -57,14 +58,12 @@ function Review() {
       >
         <SwiperSlide>
           <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
+            name={"Osuji Pius"}
+            occupation={"Software Engineer"}
             description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
+              "Amazing pool of opportunities. This platform is amazing, bringing lucrative and worthwhile job positions to your doorstep. Easy to navigate and use"
             }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
+            avatarImage={"https://pius-osuji.netlify.app/images/pius.jpg"}
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -82,79 +81,47 @@ function Review() {
 
         <SwiperSlide>
           <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
+            name={"Zubby Edison"}
+            occupation={"Sales & Marketing"}
             description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
+              "Was able to launch my career with the help of workaholic. Don't know how to describe my gratitude with words. Thank you & God bless workaholic!!!"
             }
             avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
+              "https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/254250708_2980855615463093_5284083969262653228_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFUdcRHlWjmnrS1XaefEICncqu8h1JGtUlyq7yHUka1STDpZRgrM4HhaMZGUjnmaOMUdBNUagutekRcXtgBhLzd&_nc_ohc=EUiOmN8YHmQAX8uBShe&_nc_ht=scontent-los2-1.xx&oh=00_AT-21kXfBh0vtVFtsMfizqPy-U9XdoURPLbY1WqfXiNz5Q&oe=62B402CF"
             }
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
+            name={"Micheal Huhges"}
+            occupation={"Technical Recruiter"}
             description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
+              "Everyone can go to Workaholic for exactly what they need, no matter what the scope requires. It has changed and revolutionized the job market as we know it.”"
             }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
+            avatarImage={"https://avatars.githubusercontent.com/u/3834780?v=4"}
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
+            name={"Melina Scott"}
+            occupation={"Accountant"}
             description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
+              "Our team’s distribution is its greatest asset. We have a powerful diversity of thought and experience that wouldn’t be possible if we were co-located thanks to workaholic."
             }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
+            avatarImage={"https://avatars.githubusercontent.com/u/6599979?v=4"}
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
+            name={"Dennis Chukwunta"}
+            occupation={"Data Scientist"}
             description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
+              "Workaholic has changed my life for the better. The application runs smoothly to connect job seekers to work without a hitch. Their team is doing an excellent job"
             }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
-            description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
-            }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <ReviewCard
-            name={"Okereke Chinweotito"}
-            occupation={"Frontend Developer"}
-            description={
-              "Great interface and easy to use. Good for looking for freelancers or working as a freelancer. However, the freelancer fee is a bit steep and cuts into earnings."
-            }
-            avatarImage={
-              "https://www.okereke.dev/static/0547c30639cae5c7a90a20124794832f/af4d5/me.avif"
-            }
+            avatarImage={"https://avatars.githubusercontent.com/u/25160953?v=4"}
           />
         </SwiperSlide>
       </Swiper>
