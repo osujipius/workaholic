@@ -31,6 +31,17 @@ const trendingSkills = [
   "HR Consulting",
 ];
 
+const highIncomes = [
+  "Software Engineer",
+  "Heart Surgeon",
+  "Data Scientist",
+  "IOS Developer",
+  "Technical Recruiter",
+  "Web Developer",
+  "Blockchain Developer",
+  "Pharmacist",
+];
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -105,6 +116,7 @@ export default function VerticalTabs() {
               sx={{
                 fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
+                fontWeight: "bold",
                 my: 2,
               }}
               label="Top Skills"
@@ -114,6 +126,7 @@ export default function VerticalTabs() {
               sx={{
                 fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
+                fontWeight: "bold",
                 my: 2,
               }}
               label="Trending Skills"
@@ -123,9 +136,10 @@ export default function VerticalTabs() {
               sx={{
                 fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
+                fontWeight: "bold",
                 my: 2,
               }}
-              label="Item Three"
+              label="High Income Roles"
               {...a11yProps(2)}
             />
           </Tabs>
@@ -156,7 +170,17 @@ export default function VerticalTabs() {
             ))}
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            {highIncomes.map((highIncome) => (
+              <Typography
+                sx={{
+                  fontFamily: "'Lexend Deca', sans-serif",
+                  fontSize: { md: "2em", xs: "1.5em" },
+                  color: "#2e2e2e",
+                }}
+              >
+                {highIncome}
+              </Typography>
+            ))}
           </TabPanel>
         </Box>
       </Container>
