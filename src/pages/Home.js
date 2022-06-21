@@ -5,6 +5,7 @@ import HomeStats from "../components/molecules/HomeStats";
 import HomeJobCategory from "../components/molecules/HomeJobCategory";
 import HomeReview from "../components/molecules/review.js";
 import SubHeader from "../components/atoms/SubHeader.js";
+import HomeBlog from "../components/molecules/Blog";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HomeStats />
       <HomeBanner />
       <HomeReview />
+      <HomeBlog />
     </>
   );
 }
