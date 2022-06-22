@@ -40,14 +40,14 @@
 }
 .recent-blog-posts .post-box .post-title {
   font-size: 24px;
-  color: rgb(36, 145, 223);
+  color: #14a800;
   font-weight: 700;
   margin-bottom: 18px;
   position: relative;
   transition: 0.3s;
 }
 .recent-blog-posts .post-box .post-title:hover {
-  color: #14a800;
+  color: #0c4c04;
 }
 
 .recent-blog-posts .post-box .readmore {

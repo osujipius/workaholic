@@ -1,7 +1,7 @@
 import React from "react";
 import HomeBlogCard from "../atoms/homeBlogCard/HomeBlogCard";
 
-function Blog() {
+function BlogMolecule() {
   return (
     <section id="recent-blog-posts" className="recent-blog-posts">
       <div className="container">
@@ -48,4 +48,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default BlogMolecule;
