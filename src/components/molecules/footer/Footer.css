@@ -104,7 +104,7 @@ ul {
   width: 50em;
   padding: 2em;
   height: 95%;
-  background-color: #edf1f7;
+  background-color: #ffff;
   box-shadow: 0px 10px 10px 10px rgba(1, 41, 112, 0.08);
   cursor: pointer;
   overflow-y: scroll;
@@ -116,7 +116,7 @@ ul {
   color: #7f878e !important;
 }
 #form-button {
-  background: #2491df !important	;
+  background: #14a800 !important	;
   border: 0;
   padding: 10px 30px;
   margin: 0 0 10px 0;
@@ -125,7 +125,7 @@ ul {
   border-radius: 4px;
 }
 #form-button:hover {
-  background: #14a800 !important	;
+  background: #121f10 !important	;
 }
 
 #form-close-button {
