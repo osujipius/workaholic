@@ -5,6 +5,7 @@ import Home from "./pages/Home.js";
 import Footer from "./components/molecules/footer/Footer";
 import Trending from "./pages/Trending.js";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
+import BlogPage from "./pages/BlogPage.js";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Trending" element={<Trending />} />
+          <Route path="/Blog" element={<BlogPage />} />
         </Routes>
         <BackToTopButton />
         <Footer />
