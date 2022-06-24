@@ -6,17 +6,20 @@ import Footer from "./components/molecules/footer/Footer";
 import Trending from "./pages/Trending.js";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
 import BlogPage from "./pages/BlogPage.js";
+import ScrollToTop from "./components/helperFunctions/ScrollToTop.js";
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Trending" element={<Trending />} />
-          <Route path="/Blog" element={<BlogPage />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Trending" element={<Trending />} />
+            <Route path="/Blog" element={<BlogPage />} />
+          </Routes>
+        </ScrollToTop>
         <BackToTopButton />
         <Footer />
       </BrowserRouter>

@@ -10,7 +10,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import HomeButton from "../atoms/HomeButton";
-import { Link } from "react-router-dom";
+import { Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
 const pages = ["Work", "About", "Blog", "Trending"];
 
@@ -41,7 +42,6 @@ const ResponsiveAppBar = () => {
               variant="h5"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -50,10 +50,18 @@ const ResponsiveAppBar = () => {
                 fontSize: "27px",
                 letterSpacing: ".3rem",
                 color: "#14a800",
-                textDecoration: "none",
               }}
             >
-              workaholic
+              <Link
+                component={RouterLink}
+                to="/"
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                workaholic
+              </Link>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,6 +101,7 @@ const ResponsiveAppBar = () => {
                       sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
                     >
                       <Link
+                        component={RouterLink}
                         style={{ textDecoration: "none", color: "#5e6d55" }}
                         to={`/${page}`}
                       >
@@ -107,7 +116,6 @@ const ResponsiveAppBar = () => {
               variant="h4"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 mt: 1,
@@ -117,10 +125,18 @@ const ResponsiveAppBar = () => {
                 fontWeight: 700,
                 letterSpacing: ".1rem",
                 color: "#14a800",
-                textDecoration: "none",
               }}
             >
-              workaholic
+              <Link
+                component={RouterLink}
+                to="/"
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                workaholic
+              </Link>
             </Typography>
             <Box
               sx={{
@@ -149,6 +165,7 @@ const ResponsiveAppBar = () => {
                   }}
                 >
                   <Link
+                    component={RouterLink}
                     style={{ textDecoration: "none", color: "#5e6d55" }}
                     to={`/${page}`}
                   >

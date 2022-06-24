@@ -13,13 +13,13 @@ export default function trendingImg() {
           <Box
             sx={{
               display: "flex",
-              flexWrap: "wrap",
+              flexWrap: { xs: "wrap", md: "nowrap" },
               justifyContent: "center",
             }}
           >
-            <img style={{ height: "23em" }} src={Img1} alt="img1" />
-            <img style={{ height: "23em" }} src={Img2} alt="img2" />
-            <img style={{ height: "23em" }} src={Img3} alt="img3" />
+            <img style={{ height: "20em" }} src={Img1} alt="img1" />
+            <img style={{ height: "20em" }} src={Img2} alt="img2" />
+            <img style={{ height: "20em" }} src={Img3} alt="img3" />
           </Box>
         </FadeIn>
       </Container>
