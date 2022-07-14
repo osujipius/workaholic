@@ -1,5 +1,5 @@
 import React from "react";
-import "./homeBlogCard.css";
+import "./blogCard.css";
 
 function HomeBlogCard({ date, title, src, link, style }) {
   return (

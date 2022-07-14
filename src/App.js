@@ -7,6 +7,7 @@ import Trending from "./pages/Trending.js";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
 import BlogPage from "./pages/BlogPage.js";
 import ScrollToTop from "./components/helperFunctions/ScrollToTop.js";
+import About from "./pages/About.js";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Trending" element={<Trending />} />
             <Route path="/Blog" element={<BlogPage />} />
+            <Route path="/About" element={<About />} />
           </Routes>
         </ScrollToTop>
         <BackToTopButton />

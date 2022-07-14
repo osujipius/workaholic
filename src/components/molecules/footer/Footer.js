@@ -1,6 +1,6 @@
 import * as React from "react";
-import HomeButton from "../../atoms/HomeButton";
 import { Button, Typography, Box, Modal, Fade, Backdrop } from "@mui/material";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -35,9 +35,7 @@ function Footer() {
     setOpen(true);
     disableScroll();
   };
-  const handleClose = (event) => {
-    event.preventDefault();
-
+  const handleClose = () => {
     setOpen(false);
     enableScroll();
   };
@@ -213,7 +211,9 @@ function Footer() {
             <h4>company</h4>
             <ul>
               <li>
-                <a href="#">about us</a>
+                <Link to="/about">
+                  <a>about us</a>
+                </Link>
               </li>
               <li>
                 <a href="#">Jobs</a>

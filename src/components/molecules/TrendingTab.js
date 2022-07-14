@@ -85,6 +85,11 @@ export default function VerticalTabs() {
   return (
     <FadeIn>
       <Container>
+        <header className="section-header">
+          <p style={{ marginTop: "3em", marginBottom: "-1em" }}>
+            Top Trending Skills to have
+          </p>
+        </header>
         <Box
           sx={{
             flexGrow: 1,

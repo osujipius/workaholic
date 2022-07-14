@@ -1,11 +1,14 @@
 import { Container } from "@mui/material";
 import React from "react";
+import { FadeIn } from "../components/helperFunctions/FadeIn";
 import BlogMolecule from "../components/molecules/BlogMolecule";
 
 function BlogPage() {
   return (
     <Container>
-      <BlogMolecule />
+      <FadeIn>
+        <BlogMolecule />
+      </FadeIn>
     </Container>
   );
 }
