@@ -21,6 +21,12 @@ function HomeBlogCard({ date, title, src, link, style }) {
         </div>
         <span className="post-date">{date}</span>
         <h3 className="post-title">{title}</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          quos possimus itaque consectetur cum repudiandae perspiciatis totam.
+          Ullam nulla modi recusandae tenetur cupiditate corrupti sed, harum
+          rerum magnam ipsum vitae.
+        </p>
       </div>
     </a>
   );
