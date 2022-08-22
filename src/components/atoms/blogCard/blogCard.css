@@ -14,10 +14,12 @@
   -o-transition: 0.5s;
   cursor: pointer;
   margin: 2em 1em 1em 1em;
+  -webkit-overflow-scrolling: auto;
 }
 
 .post-box::-webkit-scrollbar {
   -webkit-appearance: none;
+  -webkit-overflow-scrolling: auto;
 }
 
 .post-box::-webkit-scrollbar:vertical {
