@@ -1,7 +1,7 @@
 .recent-blog-posts .post-box {
   box-shadow: 0px 10px 10px 10px rgba(1, 41, 112, 0.08);
   transition: 0.5s;
-  height: 25em;
+  height: 20em;
   overflow-y: scroll;
   padding: 30px;
   border-radius: 8px;
@@ -18,15 +18,11 @@
 
 .post-box::-webkit-scrollbar {
   -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
-.post-box::-webkit-scrollbar:vertical {
+.post-box::-webkit-scrollbar:vertical,
+.post-box::-moz-scrollbar:vertical {
   width: 8px !important;
-}
-
-.post-box::-moz-scrollbar {
-  width: 8px;
 }
 
 .post-box::-webkit-scrollbar:horizontal,
@@ -42,7 +38,7 @@
 
 .post-box::-webkit-scrollbar-thumb,
 .post-box::-moz-scrollbar-thumb {
-  background: #14a800 !important;
+  background: #a82d00 !important;
   border-radius: 10px !important;
 }
 
