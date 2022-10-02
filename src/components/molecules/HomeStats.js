@@ -66,7 +66,7 @@ export default function HomeStats() {
               borderRadius: "10px",
               borderTopRightRadius: { md: "10px", xs: 0 },
               borderTopLeftRadius: { md: "10px", xs: 0 },
-              background: "#14a800",
+              background: "#317773",
               display: "flex",
               p: 2,
             }}

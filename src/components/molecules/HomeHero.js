@@ -1,7 +1,8 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import HeroImg from "../../assets/heroimg2.svg";
+import HeroImg from "../../assets/hero-img.jpg";
+import BtnImg from "../../assets/btn-logo.png";
 import Typography from "@mui/material/Typography";
 import HomeButton from "../atoms/HomeButton";
 import { FadeIn } from "../helperFunctions/FadeIn.js";
@@ -32,18 +33,7 @@ export default function HomeHero() {
               mt: { xs: "1em", md: "0" },
             }}
           >
-            <FadeIn>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontFamily: "'Bebas Neue', cursive",
-                  color: "#14a800",
-                  fontSize: { md: "5rem", xs: "2.7rem" },
-                }}
-              >
-                The Best Jobs all in one Place
-              </Typography>
-            </FadeIn>
+            {" "}
             <FadeIn>
               <Typography
                 variant="p"
@@ -53,7 +43,7 @@ export default function HomeHero() {
                   letterSpacing: "-.002em",
                   fontWeight: 500,
                   fontFamily: "'Lexend Deca', sans-serif",
-                  color: "#5e6d55",
+                  color: "#317773",
                 }}
               >
                 Forget the old rules. You can have the best people. Right now.
@@ -61,13 +51,27 @@ export default function HomeHero() {
               </Typography>
             </FadeIn>
             <FadeIn>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontFamily: "'Bebas Neue', cursive",
+                  color: "#201e20",
+                  fontSize: { md: "5rem", xs: "2.7rem" },
+                  marginTop: 3,
+                }}
+              >
+                The Best Jobs all in one Place
+              </Typography>
+            </FadeIn>
+            <FadeIn>
               <HomeButton
                 text="Find Work"
                 style={{
                   padding: "0.8em 2em",
-                  background: "#14a800",
+                  background: "#317773",
                   margin: "2em 0",
                 }}
+                src={BtnImg}
               />
             </FadeIn>
           </Box>

@@ -50,7 +50,7 @@ function ReviewCard({ name, description, occupation, avatarImage }) {
       ></Box>
       <Box>
         {name}
-        <br /> <Box sx={{ color: "#14A800" }}>{occupation}</Box>
+        <br /> <Box sx={{ color: "#317773" }}>{occupation}</Box>
       </Box>
     </Box>
   );

@@ -9,21 +9,33 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import HomeButton from "../atoms/HomeButton";
+import HeaderButton from "../atoms/HeaderButton";
 import { Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import LoginImg from "../../assets/login.svg";
 
-const pages = ["Work", "About", "Blog", "Trending"];
+const pages = ["Work", "About", "Blog"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { logOut, user } = useAuth();
 
+  console.log(user);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -49,7 +61,7 @@ const ResponsiveAppBar = () => {
                 fontWeight: 700,
                 fontSize: "27px",
                 letterSpacing: ".3rem",
-                color: "#14a800",
+                color: "#317773",
               }}
             >
               <Link
@@ -57,7 +69,7 @@ const ResponsiveAppBar = () => {
                 to="/"
                 sx={{
                   textDecoration: "none",
-                  color: "inherit",
+                  color: "#317773",
                 }}
               >
                 workaholic
@@ -72,7 +84,7 @@ const ResponsiveAppBar = () => {
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
                 sx={{
-                  color: "#14a800",
+                  color: "#317773",
                 }}
               >
                 <MenuIcon />
@@ -124,7 +136,7 @@ const ResponsiveAppBar = () => {
                 fontFamily: "'Bebas Neue', cursive",
                 fontWeight: 700,
                 letterSpacing: ".1rem",
-                color: "#14a800",
+                color: "#317773",
               }}
             >
               <Link
@@ -154,19 +166,25 @@ const ResponsiveAppBar = () => {
                     my: 2,
                     mx: 2,
                     display: "block",
-                    color: "#5e6d55",
                     fontSize: "16px",
                     fontFamily: "'Lexend Deca', sans-serif",
                     textTransform: "capitalize",
 
                     "&:hover": {
-                      background: "#93ed87",
+                      background: "none",
                     },
                   }}
                 >
                   <Link
                     component={RouterLink}
-                    style={{ textDecoration: "none", color: "#5e6d55" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "#5e6d55",
+                      p: 1,
+                      borderRadius: 2,
+                      transition: ".3s",
+                      "&:hover": { background: "#4ec4be", color: "#fff" },
+                    }}
                     to={`/${page}`}
                   >
                     {page}
@@ -175,7 +193,55 @@ const ResponsiveAppBar = () => {
               ))}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
-              <HomeButton text="Jobs" />
+              {user !== null ? (
+                <Button
+                  onClick={handleSignOut}
+                  sx={{
+                    background: "#265a57",
+                    fontFamily: "'Lexend Deca', sans-serif",
+                    fontSize: { xs: "small", xl: "medium" },
+                    borderRadius: 2,
+                    mt: { xs: 1 },
+                    transition: ".5s",
+                    color: "#fff",
+                    p: 1,
+
+                    "&:hover": {
+                      color: "#fff",
+                      background: "#317773",
+                    },
+                  }}
+                >
+                  logOut
+                </Button>
+              ) : (
+                <Link
+                  component={RouterLink}
+                  to="/Signin"
+                  sx={{
+                    background: "#265a57",
+                    fontFamily: "'Lexend Deca', sans-serif",
+                    fontSize: { xs: "small", xl: "medium" },
+                    borderRadius: 2,
+                    mt: { xs: 1 },
+                    transition: ".5s",
+                    color: "#fff",
+                    p: 1,
+
+                    "&:hover": {
+                      color: "#fff",
+                      background: "#317773",
+                    },
+                  }}
+                >
+                  {/* <img
+                    style={{ height: 20, width: 20 }}
+                    src={LoginImg}
+                    alt=""
+                  /> */}
+                  Login
+                </Link>
+              )}
             </Box>
           </Toolbar>
         </Container>

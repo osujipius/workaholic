@@ -243,18 +243,10 @@ function Footer() {
           <div className="footer-col">
             <h4>Trending</h4>
             <ul>
-              <li>
-                <a href="#">Tech & IT</a>
-              </li>
-              <li>
-                <a href="#">Marketing</a>
-              </li>
-              <li>
-                <a href="#">Customer relations</a>
-              </li>
-              <li>
-                <a href="#">Sales</a>
-              </li>
+              <li>Tech & IT</li>
+              <li>Marketing</li>
+              <li>Customer relations</li>
+              <li>Sales</li>
             </ul>
           </div>
           <div className="footer-col">

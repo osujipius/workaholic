@@ -84,7 +84,7 @@ export default function VerticalTabs() {
 
   return (
     <FadeIn>
-      <Container>
+      <Container sx={{ mt: 5 }}>
         <header className="section-header">
           <p style={{ marginTop: "3em", marginBottom: "-1em" }}>
             Top Trending Skills to have
@@ -97,13 +97,14 @@ export default function VerticalTabs() {
             display: "flex",
             justifyContent: "center",
             height: "auto",
-            my: 10,
+            mb: 10,
+            mt: 5,
           }}
         >
           <Tabs
             TabIndicatorProps={{
               style: {
-                backgroundColor: "#14a800",
+                backgroundColor: "#317773",
               },
             }}
             orientation="vertical"
@@ -114,7 +115,7 @@ export default function VerticalTabs() {
             sx={{
               borderRight: 1,
               borderColor: "divider",
-              "& button.Mui-selected": { color: "#14a800" },
+              "& button.Mui-selected": { color: "#317773" },
             }}
           >
             <Tab

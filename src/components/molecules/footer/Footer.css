@@ -20,7 +20,7 @@ ul {
   list-style: none;
 }
 .footer {
-  background-color: #001e00;
+  background-color: #001e10;
   padding: 70px 0;
   margin: 5em 0 0 0;
 }
@@ -50,10 +50,14 @@ ul {
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.footer-col ul li {
+  color: #bbbbbb;
+}
+
 .footer-col ul li a {
   font-size: 16px;
   text-transform: capitalize;
-  color: #ffffff;
   text-decoration: none;
   font-weight: 300;
   color: #bbbbbb;

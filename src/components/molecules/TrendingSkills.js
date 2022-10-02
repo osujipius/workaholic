@@ -13,7 +13,7 @@ export default function TrendingSkills() {
     <>
       <Container sx={{ my: 5 }}>
         <header className="section-header">
-          <p style={{ marginTop: "3em", marginBottom: "-1em" }}>
+          <p style={{ marginTop: "3em", marginBottom: "-3em" }}>
             Popular professional services
           </p>
         </header>

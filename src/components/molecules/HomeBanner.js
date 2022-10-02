@@ -23,7 +23,7 @@ export default function HomeBanner() {
           <Box
             sx={{
               flex: 1,
-              background: "#2a51be",
+              background: "#E0A96D",
               color: "#fff",
               p: 3,
               pb: 5,
