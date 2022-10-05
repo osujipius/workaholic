@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Box, Button, Container } from "@mui/material";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -46,7 +47,9 @@ export default function Signup() {
   }, [user, navigate]);
 
   return (
-    <>
+    <Container
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+    >
       {/* {error && <h2>{error}</h2>}
 
       <form onSubmit={handleSubmit}>
@@ -70,7 +73,23 @@ export default function Signup() {
         </button>
       </form> */}
 
-      <button onClick={handleGoogleSignIn}>Google</button>
-    </>
+      <Box
+        sx={{
+          border: "2px solid #cdcdcd",
+          height: 550,
+          width: 450,
+          minWidth: 350,
+          mt: 10,
+          borderRadius: 5,
+          display: "flex",
+          justifyContent: "center",
+          paddingTop: 20,
+        }}
+      >
+        <Button onClick={handleGoogleSignIn} class="google-button">
+          <span>Continue with Google</span>
+        </Button>
+      </Box>
+    </Container>
   );
 }

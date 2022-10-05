@@ -7,7 +7,7 @@ import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.
 import BlogPage from "./pages/BlogPage.js";
 import ScrollToTop from "./components/helperFunctions/ScrollToTop.js";
 import About from "./pages/About.js";
-import Signup from "./pages/signup";
+import Signup from "./pages/Auth/Signup";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 
 export default function App() {

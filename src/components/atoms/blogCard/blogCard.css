@@ -34,20 +34,20 @@
 .recent-blog-posts .post-box .post-date {
   font-size: 16px;
   font-weight: 600;
-  color: rgba(1, 41, 112, 0.6);
+  color: rgba(23, 26, 31, 0.6);
   display: block;
   margin-bottom: 10px;
 }
 .recent-blog-posts .post-box .post-title {
   font-size: 24px;
-  color: #14a800;
+  color: #317773;
   font-weight: 700;
   margin-bottom: 18px;
   position: relative;
   transition: 0.3s;
 }
 .recent-blog-posts .post-box .post-title:hover {
-  color: #0c4c04;
+  color: #20514e;
 }
 
 .recent-blog-posts .post-box .readmore {

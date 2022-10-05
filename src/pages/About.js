@@ -24,7 +24,7 @@ export default function About() {
             variant="h5"
             sx={{
               fontFamily: "'Lexend Deca', sans-serif",
-              color: "#14a800",
+              color: "#317773",
               mb: 7,
             }}
           >
