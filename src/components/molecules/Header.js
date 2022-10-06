@@ -214,15 +214,19 @@ const ResponsiveAppBar = () => {
                   logOut
                 </Button>
               ) : (
-                <Button
+                <Link
+                  component={RouterLink}
+                  to="/Signin"
                   sx={{
                     background: "#265a57",
                     fontFamily: "'Lexend Deca', sans-serif",
                     fontSize: { xs: "small", xl: "medium" },
                     borderRadius: 2,
-                    mt: { xs: 1 },
+                    mt: 1,
                     transition: ".5s",
                     color: "#fff",
+                    p: 1,
+                    textTransform: "capitalize",
 
                     "&:hover": {
                       color: "#fff",
@@ -230,24 +234,13 @@ const ResponsiveAppBar = () => {
                     },
                   }}
                 >
-                  <Link
-                    component={RouterLink}
-                    to="/Signin"
-                    sx={{
-                      color: "#fff",
-                      "&:hover": {
-                        color: "#fff",
-                      },
-                    }}
-                  >
-                    <img
-                      style={{ height: 20, width: 20 }}
-                      src={LoginImg}
-                      alt=""
-                    />
-                    Login
-                  </Link>
-                </Button>
+                  <img
+                    style={{ height: 20, width: 20 }}
+                    src={LoginImg}
+                    alt=""
+                  />
+                  LOGIN
+                </Link>
               )}
             </Box>
           </Toolbar>
