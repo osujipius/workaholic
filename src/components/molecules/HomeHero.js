@@ -5,7 +5,7 @@ import HeroImg from "../../assets/hero-img.jpg";
 import BtnImg from "../../assets/btn-logo.png";
 import Typography from "@mui/material/Typography";
 import HomeButton from "../atoms/HomeButton";
-import { FadeIn } from "../helperFunctions/FadeIn.js";
+import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
 
 export default function HomeHero() {
   return (

@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import HeaderButton from "../atoms/HeaderButton";
 import { Link } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import LoginImg from "../../assets/login.svg";
 
@@ -20,6 +20,7 @@ const pages = ["Work", "About", "Blog"];
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { logOut, user } = useAuth();
+  const navigate = useNavigate();
 
   console.log(user);
   const handleOpenNavMenu = (event) => {
@@ -33,6 +34,7 @@ const ResponsiveAppBar = () => {
   const handleSignOut = async () => {
     try {
       await logOut();
+      navigate("/blog");
     } catch (error) {
       console.log(error);
     }

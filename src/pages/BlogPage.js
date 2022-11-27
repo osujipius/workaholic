@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import React from "react";
-import { FadeIn } from "../components/helperFunctions/FadeIn";
+import { FadeIn } from "../components/molecules/helperFunctions/FadeIn";
 import BlogMolecule from "../components/molecules/BlogMolecule";
 
 function BlogPage() {

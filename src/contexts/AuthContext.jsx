@@ -5,38 +5,26 @@ import {
   signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
-  signInWithPopup,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase/config";
 
 const AuthContext = React.createContext();
 
 export function AuthProvider({ children }) {
-  // const [currentUser, setCurrentUser] = useState();
   const [user, setUser] = useState({});
-  //   const [loading, setLoading] = useState(true);
 
-  //   function signup(email, password) {
-  //     return auth.createUserWithEmailAndPassword(email, password);
-  //   }
-
-  //   useEffect(() => {
-  //     const unsubscribe = auth.onAuthStateChanged((user) => {
-  //       setCurrentUser(user);
-  //       setLoading(false);
-  //     });
-
-  //     return unsubscribe;
-  //   }, []);
-
-  //   const value = {
-  //     currentUser,
-  //     signup,
-  //   };
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithRedirect(auth, provider);
+  };
+
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => {
@@ -53,7 +41,9 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+    <AuthContext.Provider
+      value={{ googleSignIn, logOut, user, createUser, signIn }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Star } from "@mui/icons-material";
-import { FadeIn } from "../helperFunctions/FadeIn.js";
+import { FadeIn } from "../molecules/helperFunctions/FadeIn";
 
 export default function BasicCard({
   categoryName,

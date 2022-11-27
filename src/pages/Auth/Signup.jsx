@@ -3,34 +3,14 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Box, Button, Container } from "@mui/material";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Signup() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { signup, googleSignIn, user } = useAuth();
+  const { googleSignIn, user, createUser } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-  //     return setError("Passwords do not match");
-  //   }
-  //   try {
-  //     setError("");
-  //     setLoading(true);
-  //     await signup(emailRef.current.value, passwordRef.current.value);
-  //   } catch {
-  //     setError("Failed to create account");
-  //   }
-
-  //   setLoading(false);
-  // }
-
-  // console.log(emailRef, passwordRef, passwordConfirmRef);
 
   const handleGoogleSignIn = async () => {
     try {
@@ -40,38 +20,43 @@ export default function Signup() {
     }
   };
 
-  useEffect(() => {
-    if (user !== null) {
-      navigate("/About");
+  // useEffect(() => {
+  //   if (user !== null) {
+  //     navigate("/jobs");
+  //   }
+  // }, [user, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await createUser(email, password);
+      navigate("/jobs");
+    } catch (e) {
+      setError(e.message);
+      console.log(e.message);
     }
-  }, [user, navigate]);
+  };
 
   return (
     <Container
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      {/* {error && <h2>{error}</h2>}
-
       <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Email" ref={emailRef} />
         <input
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          onChange={(e) => setPassword(e.target.value)}
           type="password"
           name="password"
           id=""
           placeholder="Password"
-          ref={passwordRef}
         />
-        <input
-          type="password"
-          name="password"
-          id=""
-          placeholder="Password"
-          ref={passwordConfirmRef}
-        />
-        <button type="submit" disabled={loading}>
-          Submit
-        </button>
-      </form> */}
+        <button type="submit">Submit</button>
+      </form>
 
       <Box
         sx={{

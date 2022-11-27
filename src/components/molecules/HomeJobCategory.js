@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import CategoryCard from "../atoms/CategoryCard";
-import { FadeIn } from "../helperFunctions/FadeIn.js";
+import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
 
 function HomeJobCategory() {
   return (

@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import { FadeIn } from "../components/helperFunctions/FadeIn.js";
+import { FadeIn } from "../components/molecules/helperFunctions/FadeIn";
 
 export default function About() {
   return (

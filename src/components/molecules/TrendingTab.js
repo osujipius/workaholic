@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { FadeIn } from "../helperFunctions/FadeIn.js";
+import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
 
 const topSkills = [
   "Software Engineer",

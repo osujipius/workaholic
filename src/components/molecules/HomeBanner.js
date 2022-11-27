@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import HomeButton from "../atoms/HomeButton.js";
-import { FadeIn } from "../helperFunctions/FadeIn.js";
+import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
 
 export default function HomeBanner() {
   return (
