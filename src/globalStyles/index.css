@@ -63,6 +63,7 @@ section {
 }
 
 .google-button {
+  width: 80%;
   background-color: #4285f4;
   color: #fff;
   text-align: center;
@@ -72,10 +73,11 @@ section {
   align-items: center;
   border: none;
   border-radius: 20px;
+  margin: 15px auto;
 }
 
 .google-button span {
-  margin-left: 20px;
+  margin: 5px auto;
 }
 
 .google-button::before {

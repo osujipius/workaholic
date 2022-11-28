@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Box, Button, Container } from "@mui/material";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Input, Submit } from "../../components/atoms/inputField/Input";
 
 export default function Signup() {
   const { googleSignIn, user, createUser } = useAuth();
@@ -19,12 +19,6 @@ export default function Signup() {
       console.log(error);
     }
   };
-
-  // useEffect(() => {
-  //   if (user !== null) {
-  //     navigate("/jobs");
-  //   }
-  // }, [user, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,22 +36,6 @@ export default function Signup() {
     <Container
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          name="password"
-          id=""
-          placeholder="Password"
-        />
-        <button type="submit">Submit</button>
-      </form>
-
       <Box
         sx={{
           border: "2px solid #cdcdcd",
@@ -68,9 +46,32 @@ export default function Signup() {
           borderRadius: 5,
           display: "flex",
           justifyContent: "center",
-          paddingTop: 20,
+          flexDirection: "column",
         }}
       >
+        <form onSubmit={handleSubmit}>
+          <Input
+            name={"email"}
+            placeholder={"Email"}
+            type={"email"}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <Input
+            name={"password"}
+            placeholder={"Password"}
+            type={"password"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <Submit />
+        </form>
+        <hr
+          style={{
+            width: "90%",
+            margin: "20px auto",
+          }}
+        />
         <Button onClick={handleGoogleSignIn} class="google-button">
           <span>Continue with Google</span>
         </Button>

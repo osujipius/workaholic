@@ -218,7 +218,7 @@ const ResponsiveAppBar = () => {
               ) : (
                 <Link
                   component={RouterLink}
-                  to="/Signin"
+                  to="/login"
                   sx={{
                     background: "#265a57",
                     fontFamily: "'Lexend Deca', sans-serif",
