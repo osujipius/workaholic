@@ -7,7 +7,7 @@ import TrendingTab from "../components/molecules/TrendingTab";
 import Faq from "../components/molecules/Faq";
 import Pricing from "../components/molecules/Pricing";
 
-export default function Home() {
+export default function Landing() {
   return (
     <>
       <HomeHero />

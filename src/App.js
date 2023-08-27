@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home.js";
+import Landing from "./pages/landing.js";
 import Footer from "./components/molecules/footer/Footer";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
 import BlogPage from "./pages/blog";
@@ -22,7 +22,7 @@ export default function App() {
           <Header />
           <ScrollToTop>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Landing />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/register" element={<Signup />} />
