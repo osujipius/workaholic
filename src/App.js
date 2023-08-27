@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../src/pages/home.js";
+import Home from "./pages/home.js";
 import Footer from "./components/molecules/footer/Footer";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
 import BlogPage from "./pages/blog";

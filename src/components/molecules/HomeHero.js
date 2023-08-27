@@ -22,7 +22,7 @@ import {
   SiGodaddy,
 } from "react-icons/si";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <section className="bg-white pb-12">
       <div className="w-full px-8 py-12 md:py-20 flex flex-col items-center">
@@ -120,4 +120,4 @@ const LogoItemsBottom = () => (
   </>
 );
 
-export default Hero;
+export default HomeHero;
