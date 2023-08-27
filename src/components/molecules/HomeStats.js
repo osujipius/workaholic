@@ -35,10 +35,9 @@ export default function HomeStats() {
           >
             <Typography
               variant="h3"
+              className="!font-mono !font-semibold !text-4xl !tracking-tight"
               sx={{
-                fontFamily: "'Lexend Deca', sans-serif",
                 fontWeight: 500,
-                fontSize: { md: "2.8rem", xs: "1.7rem" },
               }}
             >
               Why talents turn to Workaholic
@@ -85,8 +84,8 @@ export default function HomeStats() {
             <Box>
               <Typography
                 variant="h4"
+                className="!font-mono"
                 sx={{
-                  fontFamily: "'Lexend Deca', sans-serif",
                   textAlign: "center",
                   fontWeight: 500,
                   fontSize: { md: "2rem", xs: "1.5rem" },

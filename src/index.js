@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./globalStyles/bootstrap.css";
 import "./globalStyles/index.css";
 import App from "./App";
 

@@ -23,9 +23,9 @@ export default function StatItem({ title, icon, info, style }) {
           <Box>{icon}</Box>
           <Typography
             variant="h4"
+            className="!font-mono"
             sx={{
               ml: 1,
-              fontFamily: "'Lexend Deca', sans-serif",
               fontSize: { md: "1.8rem", xs: "1.5rem" },
             }}
           >
@@ -40,8 +40,8 @@ export default function StatItem({ title, icon, info, style }) {
         >
           <Typography
             variant="p"
+            className="!font-mono"
             sx={{
-              fontFamily: "'Lexend Deca', sans-serif",
               color: "#5e6d55",
             }}
           >

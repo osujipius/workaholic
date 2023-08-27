@@ -8,35 +8,25 @@ function HomeJobCategory() {
       <Container>
         <FadeIn>
           <Typography
+            className="!font-mono !text-4xl px-2 sm:px-0 !font-semibold !tracking-tight"
             variant="h3"
             sx={{
               mt: "2em",
-              fontFamily: "Merriweather",
               fontWeight: "bold",
-              fontSize: { md: "3rem", xs: "1.6rem" },
             }}
           >
-            Browse work by category
+            Job categories
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ mb: "2em" }}>
-            Looking for work ? {""}
-            <Typography
-              variant="span"
-              color="#317773"
-              sx={{
-                "&:hover": {
-                  color: "darkgreen",
-                  cursor: "pointer",
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              Browse Jobs
-            </Typography>
+          <Typography
+            className="!font-mono px-2 sm:px-0 !text-gray-500"
+            sx={{ mb: "2em" }}
+          >
+            Find work in various fields
           </Typography>
         </FadeIn>
       </Container>
       <Container
+        className="pb-10"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },

@@ -1,31 +1,32 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from "./components/molecules/Header.js";
-import Home from "./pages/Home.js";
+import Home from "./pages/home.js";
 import Footer from "./components/molecules/footer/Footer";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
-import BlogPage from "./pages/BlogPage.js";
+import BlogPage from "./pages/blog.js";
 import ScrollToTop from "./components/molecules/helperFunctions/ScrollToTop.js";
-import About from "./pages/About.js";
+import About from "./pages/about.js";
 import Signup from "./pages/Auth/Signup";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Jobs from "./pages/Jobs.js";
 import Signin from "./pages/Auth/Signin.jsx";
-import { ProtectedRoute } from "./pages/ProtectedRoute.jsx";
+import { ProtectedRoute } from "./pages/ProtectedRoute.js";
+import Header from "./components/molecules/Header";
+import Login from "./pages/Auth/login.js";
 
 export default function App() {
   return (
     <>
       <AuthProvider>
         <BrowserRouter>
-          <Nav />
+          <Header />
           <ScrollToTop>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/register" element={<Signup />} />
-              <Route path="/login" element={<Signin />} />
+              <Route path="/login" element={<Login />} />
               <Route
                 path="/jobs"
                 element={
