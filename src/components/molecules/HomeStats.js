@@ -49,9 +49,9 @@ export default function HomeStats() {
               info="We provide an unlimited pool of jobs for talented individuals in every field possible"
             />
             <StatItem
-              title="Totally Free"
+              title="Affordable"
               icon={<MonetizationOnIcon />}
-              info="Application process and interview scheduling are all cost free"
+              info="Application process and interview scheduling for just a one time fee"
             />
             <StatItem
               title="Safe & Secure"

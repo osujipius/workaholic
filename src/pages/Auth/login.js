@@ -1,23 +1,50 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../components/atoms/Logo";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
+  const { signIn, googleSignIn } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await signIn(email, password);
+    } catch (e) {
+      setError(e.message);
+      console.log(e.message);
+    }
+  };
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center mt-10">
+      <div className="flex flex-col justify-center flex-1 min-h-full py-12 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center mt-10 sm:mx-auto sm:w-full sm:max-w-md">
           {/* <Logo fill={"#317773"} /> */}
-          <h2 className="mt-3 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 font-mono">
+          <h2 className="mt-3 font-mono text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
             Sign in to your account
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-          <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+          <div className="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
             <form className="space-y-6" action="#" method="POST">
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900 font-mono"
+                  className="block font-mono text-sm font-medium leading-6 text-gray-900"
                 >
                   Email address
                 </label>
@@ -36,7 +63,7 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900 font-mono"
+                  className="block font-mono text-sm font-medium leading-6 text-gray-900"
                 >
                   Password
                 </label>
@@ -62,7 +89,7 @@ export default function Login() {
                   />
                   <label
                     htmlFor="remember-me"
-                    className="ml-3 block text-sm leading-6 text-gray-900 font-mono"
+                    className="block ml-3 font-mono text-sm leading-6 text-gray-900"
                   >
                     Remember me
                   </label>
@@ -97,26 +124,26 @@ export default function Login() {
                   <div className="w-full border-t border-gray-200" />
                 </div>
                 <div className="relative flex justify-center text-sm font-medium leading-6">
-                  <span className="bg-white px-6 text-gray-900 font-mono">
+                  <span className="px-6 font-mono text-gray-900 bg-white">
                     Or continue with
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 mt-6">
                 <a
                   href="/"
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-[#1D9BF0] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]"
                 >
                   <svg
-                    className="h-5 w-5"
+                    className="w-5 h-5"
                     aria-hidden="true"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
                     <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
                   </svg>
-                  <span className="text-sm font-semibold leading-6 font-mono">
+                  <span className="font-mono text-sm font-semibold leading-6">
                     Twitter
                   </span>
                 </a>
@@ -126,7 +153,7 @@ export default function Login() {
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-[#24292F] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]"
                 >
                   <svg
-                    className="h-5 w-5"
+                    className="w-5 h-5"
                     aria-hidden="true"
                     fill="currentColor"
                     viewBox="0 0 20 20"
@@ -137,7 +164,7 @@ export default function Login() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-sm font-semibold leading-6 font-mono">
+                  <span className="font-mono text-sm font-semibold leading-6">
                     GitHub
                   </span>
                 </a>
@@ -145,7 +172,7 @@ export default function Login() {
             </div>
           </div>
 
-          <p className="mt-10 text-center text-sm text-gray-500 font-mono">
+          <p className="mt-10 font-mono text-sm text-center text-gray-500">
             Not a member?{" "}
             <a
               href="/"

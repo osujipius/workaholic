@@ -24,21 +24,21 @@ import {
 
 const HomeHero = () => {
   return (
-    <section className="bg-white pb-12">
-      <div className="w-full px-8 py-12 md:py-20 flex flex-col items-center">
-        <h1 className="text-center text-4xl md:text-6xl max-w-xl font-semibold font-mono">
-          The easiest way to scale your analytics
+    <section className="pb-12 bg-white">
+      <div className="flex flex-col items-center w-full px-8 py-12 md:py-20">
+        <h1 className="max-w-2xl font-mono text-4xl font-semibold text-center md:text-6xl">
+          Your Personalized Job Search and Interview Solution
         </h1>
-        <p className="text-center max-w-xl my-6 font-mono">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          dolore vitae minus dolorum.
+        <p className="max-w-xl my-6 font-mono text-center">
+          Discover the best openings at the best companies, learn valuable
+          interview skills, and conquer your career aspirations.
         </p>
         <button className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono">
-          Try it free
+          Try it
         </button>
       </div>
 
-      <div className="flex  overflow-hidden">
+      <div className="flex overflow-hidden">
         <TranslateWrapper>
           <LogoItemsTop />
         </TranslateWrapper>
@@ -49,7 +49,7 @@ const HomeHero = () => {
           <LogoItemsTop />
         </TranslateWrapper>
       </div>
-      <div className="flex overflow-hidden mt-4">
+      <div className="flex mt-4 overflow-hidden">
         <TranslateWrapper reverse>
           <LogoItemsBottom />
         </TranslateWrapper>
@@ -83,7 +83,7 @@ const LogoItem = ({ Icon }) => {
       href="/"
       rel="nofollow"
       target="_blank"
-      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center hover:bg-slate-200 text-black transition-colors"
+      className="flex items-center justify-center w-16 h-16 text-black transition-colors md:w-24 md:h-24 hover:bg-slate-200"
     >
       <Icon className="text-4xl md:text-5xl" />
     </a>

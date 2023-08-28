@@ -13,6 +13,7 @@ import Signin from "./pages/Auth/Signin.jsx";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
 import Header from "./components/molecules/Header";
 import Login from "./pages/Auth/login";
+import NotFound from "./pages/notFoundPage";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </ScrollToTop>
           <BackToTopButton />
