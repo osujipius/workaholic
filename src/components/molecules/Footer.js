@@ -1,4 +1,6 @@
-import Logo from "../../atoms/Logo";
+import { useState } from "react";
+import Logo from "../atoms/Logo";
+import SupportModal from "./SupportModal";
 
 const navigation = {
   solutions: [
@@ -87,6 +89,7 @@ const navigation = {
 };
 
 export default function Footer() {
+  const [openModal, setOpenModal] = useState(true);
   return (
     <footer
       className="font-mono bg-white border-t border-gray-200"
@@ -142,12 +145,12 @@ export default function Footer() {
                 <ul className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <button
+                        onClick={() => setOpenModal(true)}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -197,6 +200,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <SupportModal openModal={openModal} setOpenModal={setOpenModal} />
     </footer>
   );
 }

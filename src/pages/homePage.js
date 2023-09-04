@@ -1,6 +1,6 @@
 import React from "react";
 import HomeHero from "../components/molecules/HomeHero";
-import HomeStats from "../components/molecules/HomeStats";
+import HomeStats from "../components/molecules/WhyUs";
 import HomeJobCategory from "../components/molecules/HomeJobCategory";
 import HomeReview from "../components/molecules/Reviews";
 import TrendingTab from "../components/molecules/TrendingTab";

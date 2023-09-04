@@ -21,6 +21,7 @@ import {
   SiGenius,
   SiGodaddy,
 } from "react-icons/si";
+import Button from "../atoms/Button";
 
 const HomeHero = () => {
   return (
@@ -33,9 +34,7 @@ const HomeHero = () => {
           Discover the best openings at the best companies, learn valuable
           interview skills, and conquer your career aspirations.
         </p>
-        <button className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono">
-          Try it
-        </button>
+        <Button title={"Try it"} />
       </div>
 
       <div className="flex overflow-hidden">

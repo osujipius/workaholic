@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/homePage";
-import Footer from "./components/molecules/footer/Footer";
+import Footer from "./components/molecules/Footer";
 import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.js";
 import BlogPage from "./pages/blogPage";
 import ScrollToTop from "./components/molecules/helperFunctions/ScrollToTop.js";

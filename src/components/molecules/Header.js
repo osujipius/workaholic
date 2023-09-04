@@ -20,7 +20,7 @@ const NavLeft = ({ setIsOpen }) => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="block lg:hidden text-gray-950 text-2xl"
+        className="block text-2xl lg:hidden text-gray-950"
         onClick={() => setIsOpen((pv) => !pv)}
       >
         <FiMenu />
@@ -29,17 +29,17 @@ const NavLeft = ({ setIsOpen }) => {
       <NavLink text="Jobs" />
       <NavLink text="Community" />
       <NavLink text="Pricing" />
-      <NavLink text="Company" />
+      <NavLink text="About us" href={"/about"} />
     </div>
   );
 };
 
-const NavLink = ({ text }) => {
+const NavLink = ({ text, href }) => {
   return (
     <a
-      href="/"
+      href={href}
       rel="nofollow"
-      className="hidden lg:block h-[30px] overflow-hidden font-medium"
+      className="hidden lg:block h-[30px] overflow-hidden font-medium cursor-pointer"
     >
       <motion.div whileHover={{ y: -30 }}>
         <span className="flex items-center h-[30px] text-gray-500 font-mono font-semibold">
@@ -80,7 +80,7 @@ const NavMenu = ({ isOpen }) => {
       variants={menuVariants}
       initial="closed"
       animate={isOpen ? "open" : "closed"}
-      className="absolute p-4 bg-white shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4"
+      className="absolute left-0 right-0 flex flex-col gap-4 p-4 origin-top bg-white shadow-lg top-full"
     >
       <MenuLink text="Solutions" />
       <MenuLink text="Community" />
@@ -113,7 +113,7 @@ const MenuLink = ({ text }) => {
 
 const Header = () => {
   return (
-    <div className="bg-gray-50 mb-10">
+    <div className="mb-10 bg-gray-50">
       <FlipNav />
     </div>
   );

@@ -9,9 +9,9 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import StatsImg from "./../../assets/statsimg.png";
 import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
+import { FadeIn } from "./helperFunctions/FadeIn.js";
 
-export default function HomeStats() {
+export default function WhyUs() {
   return (
     <>
       <FadeIn>

@@ -1,4 +1,5 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
+import Button from "../atoms/Button";
 import { FadeIn } from "./helperFunctions/FadeIn";
 
 const includedFeatures = [
@@ -62,9 +63,7 @@ export default function Pricing() {
                       USD
                     </span>
                   </p>
-                  <button className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono mt-2">
-                    Get access
-                  </button>
+                  <Button title={"Get access"} />
                   <p className="mt-6 font-mono text-xs leading-5 text-gray-600">
                     Invoices and receipts available for easy company
                     reimbursement
