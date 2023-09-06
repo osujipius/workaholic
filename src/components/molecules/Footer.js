@@ -89,7 +89,7 @@ const navigation = {
 };
 
 export default function Footer() {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   return (
     <footer
       className="font-mono bg-white border-t border-gray-200"

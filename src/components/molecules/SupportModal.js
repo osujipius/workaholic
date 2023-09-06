@@ -1,15 +1,16 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  ExclamationTriangleIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { PhoneIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Button from "../atoms/Button";
 
 export default function SupportModal({ openModal, setOpenModal }) {
   return (
     <Transition.Root show={openModal} as={Fragment}>
-      <Dialog as="div" className="relative z-[100]" onClose={setOpenModal}>
+      <Dialog
+        as="div"
+        className="relative z-[100] font-mono"
+        onClose={setOpenModal}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -23,7 +24,7 @@ export default function SupportModal({ openModal, setOpenModal }) {
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
+          <div className="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -33,32 +34,29 @@ export default function SupportModal({ openModal, setOpenModal }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                <div className="absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+              <Dialog.Panel className="relative w-full px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:max-w-lg sm:p-6">
+                <div className="absolute top-0 right-0 block pt-4 pr-4">
                   <button
                     type="button"
-                    className="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-offset-2"
                     onClick={() => setOpenModal(false)}
                   >
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="w-6 h-6" aria-hidden="true" />
                   </button>
                 </div>
-                <div className="mt-5 sm:flex sm:items-start">
-                  <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-red-100 rounded-full sm:mx-0 sm:h-10 sm:w-10">
-                    <ExclamationTriangleIcon
-                      className="w-6 h-6 text-red-600"
-                      aria-hidden="true"
-                    />
+                <div className="flex items-center gap-2 mt-5">
+                  <div className="flex items-center justify-center flex-shrink-0 bg-[#98c4c2] rounded-full mx-0 h-10 w-10">
+                    <PhoneIcon className="w-6 h-6" aria-hidden="true" />
                   </div>
+                  <p>Send us a message</p>
                 </div>
                 <form
                   id="form"
-                  action="https://formsubmit.co/coderjames7@gmail.com"
+                  action="https://formsubmit.co/osujipius7@gmail.com"
                   method="POST"
                   target="hiddenFrame"
-                  className="php-email-form"
-                  //   onSubmit={handleShow}
+                  // onSubmit={handleShow}
                 >
                   <input type="hidden" name="_captcha" value="false" />
 
@@ -66,8 +64,8 @@ export default function SupportModal({ openModal, setOpenModal }) {
                     <div className="col-md-6">
                       <input
                         type="text"
-                        name="UName"
-                        className="min-w-0 flex-auto rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                        name="Name"
+                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
                         placeholder="Your Name"
                         required="true"
                       />
@@ -75,16 +73,17 @@ export default function SupportModal({ openModal, setOpenModal }) {
                     <div className="col-md-6">
                       <input
                         type="Email"
-                        className="min-w-0 flex-auto rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
                         name="Email"
                         placeholder="Your Email"
+                        _replyto
                         required="true"
                       />
                     </div>
                     <div className="col-md-12">
                       <input
                         type="tel"
-                        className="min-w-0 flex-auto rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
                         name="Phone Number"
                         placeholder="Phone Number"
                         required="true"
@@ -93,7 +92,7 @@ export default function SupportModal({ openModal, setOpenModal }) {
                     <div className="col-md-12">
                       <input
                         type="text"
-                        className="min-w-0 flex-auto rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
                         name="Address"
                         placeholder="Address"
                         required="true"
@@ -101,7 +100,7 @@ export default function SupportModal({ openModal, setOpenModal }) {
                     </div>
                     <div className="col-md-12">
                       <textarea
-                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                        className="min-w-0 mt-4 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
                         name="msg"
                         rows="6"
                         placeholder="Type your message here"
@@ -109,26 +108,10 @@ export default function SupportModal({ openModal, setOpenModal }) {
                       ></textarea>
                     </div>
                     <div className="mt-5 text-center">
-                      <Button title={"Send"} />
+                      <Button type="submit" title={"Send"} />
                     </div>
                   </div>
                 </form>
-                {/* <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center w-full px-3 py-2 text-sm font-semibold text-white bg-red-600 rounded-md shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-                    onClick={() => setOpenModal(false)}
-                  >
-                    Deactivate
-                  </button>
-                  <button
-                    type="button"
-                    className="inline-flex justify-center w-full px-3 py-2 mt-3 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpenModal(false)}
-                  >
-                    Cancel
-                  </button>
-                </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>
