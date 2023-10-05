@@ -1,10 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../components/atoms/Logo";
 import { useAuth } from "../../contexts/AuthContext";
 
-export default function Login() {
-  const { signIn, googleSignIn } = useAuth();
+export default function Register() {
+  const { googleSignIn, user, createUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -22,20 +21,20 @@ export default function Login() {
     e.preventDefault();
     setError("");
     try {
-      await signIn(email, password);
+      await createUser(email, password);
+      //   navigate("/jobs");
     } catch (e) {
       setError(e.message);
       console.log(e.message);
     }
   };
-
   return (
     <>
       <div className="flex flex-col justify-center flex-1 min-h-full py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center mt-10 sm:mx-auto sm:w-full sm:max-w-md">
           {/* <Logo fill={"#317773"} /> */}
           <h2 className="mt-3 font-mono text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
-            Sign in to your account
+            Sign up for an account
           </h2>
         </div>
 
@@ -82,23 +81,12 @@ export default function Login() {
                 </div>
               </div>
 
-              {/* <div className="flex items-center justify-between">
-                <div className="text-sm leading-6">
-                  <a
-                    href="/"
-                    className="font-semibold text-[#317773] hover:text-[#317773] font-mono"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
-              </div> */}
-
               <div>
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-[#317773] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#317773] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#317773] font-mono"
                 >
-                  Sign in
+                  Sign up
                 </button>
               </div>
             </form>

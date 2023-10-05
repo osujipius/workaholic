@@ -13,6 +13,7 @@ const AuthContext = React.createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({});
+  console.log(user);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);

@@ -6,7 +6,7 @@ const featuredTestimonial = {
     name: "Osuji Pius",
     handle: "osujipius",
     imageUrl:
-      "https://media.licdn.com/dms/image/D4D03AQHHg6MO4CW7jQ/profile-displayphoto-shrink_400_400/0/1686420669258?e=1698883200&v=beta&t=jcEo925gje_4JJBKKgwLTiVY6ZvXpQWX49q1g7VIs0s",
+      "https://media.licdn.com/dms/image/D4D03AQGk-zxyQo5sAg/profile-displayphoto-shrink_100_100/0/1696237777941?e=1701907200&v=beta&t=L26FKYtOjCSUdkbzTswvufyQiqjZDplnM59ptkokRrM",
   },
 };
 const testimonials = [

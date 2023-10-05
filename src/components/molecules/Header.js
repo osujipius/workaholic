@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import DropDown from "../atoms/DropdownMenu";
 import Logo from "../atoms/Logo";
 
-const FlipNav = () => {
+const FlipNav = ({ user, logout }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between fixed !w-100 top-0 left-0 right-0 z-20">
       <NavLeft setIsOpen={setIsOpen} />
-      <NavRight />
+      <NavRight user={user} logout={logout} />
       <NavMenu isOpen={isOpen} />
     </nav>
   );
@@ -25,10 +27,13 @@ const NavLeft = ({ setIsOpen }) => {
       >
         <FiMenu />
       </motion.button>
-      <Logo />
-      <NavLink text="Jobs" />
-      <NavLink text="Community" />
-      <NavLink text="Pricing" />
+      <Link to={"/"}>
+        <Logo />
+      </Link>
+
+      <NavLink text="Jobs" href={""} />
+      <NavLink text="Community" href={""} />
+      <NavLink text="Pricing" href={""} />
       <NavLink text="About us" href={"/about"} />
     </div>
   );
@@ -36,9 +41,8 @@ const NavLeft = ({ setIsOpen }) => {
 
 const NavLink = ({ text, href }) => {
   return (
-    <a
-      href={href}
-      rel="nofollow"
+    <Link
+      to={href}
       className="hidden lg:block h-[30px] overflow-hidden font-medium cursor-pointer"
     >
       <motion.div whileHover={{ y: -30 }}>
@@ -49,28 +53,38 @@ const NavLink = ({ text, href }) => {
           {text}
         </span>
       </motion.div>
-    </a>
+    </Link>
   );
 };
 
-const NavRight = () => {
+const NavRight = ({ user, logout }) => {
   return (
-    <div className="flex items-center gap-4">
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-[#317773] bg-clip-text text-transparent font-semibold rounded-md whitespace-nowrap font-mono"
-      >
-        Sign in
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-[#317773] text-white font-semibold rounded-md whitespace-nowrap font-mono"
-      >
-        Sign up
-      </motion.button>
-    </div>
+    <>
+      {user === null ? (
+        <div className="flex items-center gap-4">
+          <Link to="/login">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 bg-[#317773] bg-clip-text text-transparent font-semibold rounded-md whitespace-nowrap font-mono"
+            >
+              Sign in
+            </motion.button>
+          </Link>
+          <Link to="/register">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 bg-[#317773] text-white font-semibold rounded-md whitespace-nowrap font-mono"
+            >
+              Sign up
+            </motion.button>
+          </Link>
+        </div>
+      ) : (
+        <DropDown name={user?.email} img={user?.photoURL} logout={logout} />
+      )}
+    </>
   );
 };
 
@@ -111,10 +125,10 @@ const MenuLink = ({ text }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ user, logout }) => {
   return (
     <div className="mb-10 bg-gray-50">
-      <FlipNav />
+      <FlipNav user={user} logout={logout} />
     </div>
   );
 };
