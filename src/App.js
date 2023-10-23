@@ -6,11 +6,11 @@ import BlogPage from "./pages/blogPage";
 import ScrollToTop from "./components/molecules/helperFunctions/ScrollToTop.js";
 import About from "./pages/aboutPage";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-import Jobs from "./pages/jobsPage";
+import Jobs from "./pages/JobsPage";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
 // import Login from "./pages/auth/login";
 import NotFound from "./pages/notFoundPage";
-import Register from "./pages/auth/register";
+import Register from "./pages/auth/Register";
 import Layout from "./components/layout/Layout";
 
 export default function App() {
