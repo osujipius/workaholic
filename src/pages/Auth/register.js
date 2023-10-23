@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Register() {
-  const { googleSignIn, createUser } = useAuth();
+  const { googleSignIn, isLoggedIn, createUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // const navigate = useNavigate();
-  console.log(error);
-
+  const navigate = useNavigate();
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
@@ -17,7 +15,6 @@ export default function Register() {
       console.log(error);
     }
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -29,6 +26,11 @@ export default function Register() {
       console.log(e.message);
     }
   };
+
+  useEffect(() => {
+    isLoggedIn ? navigate("/about") : navigate("/register");
+  }, [isLoggedIn, navigate]);
+
   return (
     <>
       <div className="flex flex-col justify-center flex-1 min-h-full py-12 sm:px-6 lg:px-8">
@@ -38,7 +40,6 @@ export default function Register() {
             Sign up for an account
           </h2>
         </div>
-
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -61,7 +62,6 @@ export default function Register() {
                   />
                 </div>
               </div>
-
               <div>
                 <label
                   htmlFor="password"
@@ -81,7 +81,6 @@ export default function Register() {
                   />
                 </div>
               </div>
-
               <div>
                 <button
                   type="submit"
@@ -91,7 +90,6 @@ export default function Register() {
                 </button>
               </div>
             </form>
-
             <div>
               <div className="relative mt-10">
                 <div
@@ -106,7 +104,6 @@ export default function Register() {
                   </span>
                 </div>
               </div>
-
               <div className="mt-6">
                 <button
                   onClick={handleGoogleSignIn}
@@ -140,7 +137,6 @@ export default function Register() {
                       </g>
                     </svg>
                   </div>
-
                   <span className="font-mono text-sm font-semibold leading-6">
                     Continue with google
                   </span>
