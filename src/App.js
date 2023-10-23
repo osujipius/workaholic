@@ -10,7 +10,7 @@ import Jobs from "./pages/JobsPage";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
 // import Login from "./pages/auth/login";
 import NotFound from "./pages/notFoundPage";
-import Register from "./pages/auth/Register";
+import Register from "./pages/auth/register";
 import Layout from "./components/layout/Layout";
 
 export default function App() {
