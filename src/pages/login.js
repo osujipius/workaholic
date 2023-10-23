@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import Logo from "../components/atoms/Logo";
+import { useAuth } from "../contexts/AuthContext";
 
-export default function Register() {
-  const { googleSignIn, isLoggedIn, createUser } = useAuth();
+export default function Login() {
+  const { signIn, googleSignIn, isLoggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
@@ -15,12 +17,12 @@ export default function Register() {
       console.log(error);
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      await createUser(email, password);
-      //   navigate("/jobs");
+      await signIn(email, password);
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -28,7 +30,7 @@ export default function Register() {
   };
 
   useEffect(() => {
-    isLoggedIn ? navigate("/about") : navigate("/register");
+    isLoggedIn ? navigate("/about") : navigate("/login");
   }, [isLoggedIn, navigate]);
 
   return (
@@ -37,9 +39,10 @@ export default function Register() {
         <div className="flex flex-col items-center mt-10 sm:mx-auto sm:w-full sm:max-w-md">
           {/* <Logo fill={"#317773"} /> */}
           <h2 className="mt-3 font-mono text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
-            Sign up for an account
+            Sign in to your account
           </h2>
         </div>
+
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="px-6 py-12 bg-white shadow sm:rounded-lg sm:px-12">
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -62,6 +65,7 @@ export default function Register() {
                   />
                 </div>
               </div>
+
               <div>
                 <label
                   htmlFor="password"
@@ -81,15 +85,28 @@ export default function Register() {
                   />
                 </div>
               </div>
+
+              {/* <div className="flex items-center justify-between">
+                <div className="text-sm leading-6">
+                  <a
+                    href="/"
+                    className="font-semibold text-[#317773] hover:text-[#317773] font-mono"
+                  >
+                    Forgot password?
+                  </a>
+                </div>
+              </div> */}
+
               <div>
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-[#317773] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#317773] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#317773] font-mono"
                 >
-                  Sign up
+                  Sign in
                 </button>
               </div>
             </form>
+
             <div>
               <div className="relative mt-10">
                 <div
@@ -104,6 +121,7 @@ export default function Register() {
                   </span>
                 </div>
               </div>
+
               <div className="mt-6">
                 <button
                   onClick={handleGoogleSignIn}
@@ -137,6 +155,7 @@ export default function Register() {
                       </g>
                     </svg>
                   </div>
+
                   <span className="font-mono text-sm font-semibold leading-6">
                     Continue with google
                   </span>

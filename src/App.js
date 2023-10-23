@@ -12,9 +12,9 @@ import Jobs from "./pages/JobsPage";
 import Signin from "./pages/auth/Signin.jsx";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
 import Header from "./components/molecules/Header";
-// import Login from "./pages/auth/login";
+import Login from "./pages/login";
 import NotFound from "./pages/notFoundPage";
-// import Register from "./pages/auth/register";
+import Register from "./pages/register";
 import Layout from "./components/layout/Layout";
 
 export default function App() {
@@ -28,8 +28,8 @@ export default function App() {
                 <Route path="/" element={<Landing />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/register" element={<Signup />} />
-                <Route path="/login" element={<Signin />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
                 <Route
                   path="/jobs"
                   element={
