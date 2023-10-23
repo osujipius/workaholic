@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { PhoneIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Button from "../atoms/Button";
@@ -61,51 +61,108 @@ export default function SupportModal({ openModal, setOpenModal }) {
                   <input type="hidden" name="_captcha" value="false" />
 
                   <div className="row gy-4">
-                    <div className="col-md-6">
-                      <input
-                        type="text"
-                        name="Name"
-                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
-                        placeholder="Your Name"
-                        required="true"
-                      />
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block mt-2 text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Name
+                      </label>
+                      <div className="mb-2">
+                        <input
+                          type="name"
+                          name="name"
+                          id="name"
+                          className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6"
+                          placeholder="John doe"
+                          required
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-6">
-                      <input
-                        type="Email"
-                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
-                        name="Email"
-                        placeholder="Your Email"
-                        _replyto
-                        required="true"
-                      />
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block mt-2 text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Email
+                      </label>
+                      <div className="mb-2">
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          className="block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6"
+                          placeholder="you@example.com"
+                          required
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-12">
-                      <input
-                        type="tel"
-                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
-                        name="Phone Number"
-                        placeholder="Phone Number"
-                        required="true"
-                      />
+                    <div>
+                      <label
+                        htmlFor="phone-number"
+                        className="block mt-2 text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Phone Number (Optional)
+                      </label>
+                      <div className="relative mb-2 rounded-md shadow-sm">
+                        <div className="absolute inset-y-0 left-0 flex items-center">
+                          <label htmlFor="country" className="sr-only">
+                            Country
+                          </label>
+                          <select
+                            id="country"
+                            name="country"
+                            autoComplete="country"
+                            className="h-full py-0 pl-3 text-gray-500 bg-transparent border-0 rounded-md outline-none pr-7 sm:text-sm"
+                          >
+                            <option>US</option>
+                            <option>CA</option>
+                            <option>EU</option>
+                          </select>
+                        </div>
+                        <input
+                          type="text"
+                          name="phone-number"
+                          id="phone-number"
+                          className="block w-full rounded-md border-0 py-1.5 pl-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6"
+                          placeholder="+1 (555) 987-6543"
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-12">
-                      <input
-                        type="text"
-                        className="min-w-0 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
-                        name="Address"
-                        placeholder="Address"
-                        required="true"
-                      />
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block mt-2 text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Address (Optional)
+                      </label>
+                      <div className="mb-2">
+                        <input
+                          type="address"
+                          name="address"
+                          id="address"
+                          className="block pl-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6"
+                          placeholder="12 New york street"
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-12">
-                      <textarea
-                        className="min-w-0 mt-4 flex-auto w-full rounded-md border bg-white/5 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 border-gray-200"
-                        name="msg"
-                        rows="6"
-                        placeholder="Type your message here"
-                        required="true"
-                      ></textarea>
+                    <div>
+                      <label
+                        htmlFor="comment"
+                        className="block mt-2 text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Add your comment
+                      </label>
+                      <div className="mb-2">
+                        <textarea
+                          rows={5}
+                          name="comment"
+                          id="comment"
+                          className="block w-full w-ful p-2 rounded-md border-0 py-1.5 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                          defaultValue={""}
+                          required
+                        />
+                      </div>
                     </div>
                     <div className="mt-5 text-center">
                       <Button type="submit" title={"Send"} />

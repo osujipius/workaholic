@@ -6,7 +6,9 @@ export default function TrustedBy() {
           Trusted by
         </h2>
         <p className="mt-6 mb-5 text-base leading-7 text-gray-600">
-          Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod
+          Job seekers across the globe prefer our platform for their job search.{" "}
+          <br />
+          We're the go-to destination for finding your dream job.
         </p>
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
           <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">

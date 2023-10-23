@@ -136,10 +136,12 @@ export default function Footer() {
                         {item.name}
                       </a>
 
-                      {item.name === "Interview prep" ||
-                        ("Resume review" && (
-                          <Badge title={"Pro"} className="ml-1 bottom-2" />
-                        ))}
+                      {item.name === "Interview prep" && (
+                        <Badge title={"Pro"} className="ml-1 bottom-2" />
+                      )}
+                      {item.name === "Resume review" && (
+                        <Badge title={"Pro"} className="ml-1 bottom-2" />
+                      )}
                     </li>
                   ))}
                 </ul>
