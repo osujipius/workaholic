@@ -9,9 +9,9 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import StatsImg from "./../../assets/statsimg.png";
 import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
-import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
+import { FadeIn } from "./helperFunctions/FadeIn.js";
 
-export default function HomeStats() {
+export default function WhyUs() {
   return (
     <>
       <FadeIn>
@@ -35,10 +35,9 @@ export default function HomeStats() {
           >
             <Typography
               variant="h3"
+              className="!font-mono !font-semibold !text-4xl !tracking-tight"
               sx={{
-                fontFamily: "'Lexend Deca', sans-serif",
                 fontWeight: 500,
-                fontSize: { md: "2.8rem", xs: "1.7rem" },
               }}
             >
               Why talents turn to Workaholic
@@ -50,9 +49,9 @@ export default function HomeStats() {
               info="We provide an unlimited pool of jobs for talented individuals in every field possible"
             />
             <StatItem
-              title="Totally Free"
+              title="Affordable"
               icon={<MonetizationOnIcon />}
-              info="Application process and interview scheduling are all cost free"
+              info="Application process and interview scheduling for just a one time fee"
             />
             <StatItem
               title="Safe & Secure"
@@ -85,8 +84,8 @@ export default function HomeStats() {
             <Box>
               <Typography
                 variant="h4"
+                className="!font-mono"
                 sx={{
-                  fontFamily: "'Lexend Deca', sans-serif",
                   textAlign: "center",
                   fontWeight: 500,
                   fontSize: { md: "2rem", xs: "1.5rem" },

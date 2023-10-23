@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDjEyzqaL9fHX4f0_qdzNApH6ePZ6aNKZU",
-  authDomain: "workaholic-9c059.firebaseapp.com",
-  projectId: "workaholic-9c059",
-  storageBucket: "workaholic-9c059.appspot.com",
-  messagingSenderId: "924418389132",
-  appId: "1:924418389132:web:8db103a1b676642fbb37a9",
-  measurementId: "G-JTVMXJWFDR",
+  apiKey: "AIzaSyArW4qACXiIy177XayvcytXEXNnlPzsLGk",
+  authDomain: "workaholic-74867.firebaseapp.com",
+  projectId: "workaholic-74867",
+  storageBucket: "workaholic-74867.appspot.com",
+  messagingSenderId: "438068772159",
+  appId: "1:438068772159:web:83ba583b49e6832630278a",
+  measurementId: "G-JWNLXS4V5S",
 };
 
 // Initialize Firebase

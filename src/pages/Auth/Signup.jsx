@@ -72,7 +72,7 @@ export default function Signup() {
             margin: "20px auto",
           }}
         />
-        <Button onClick={handleGoogleSignIn} class="google-button">
+        <Button onClick={handleGoogleSignIn} className="google-button">
           <span>Continue with Google</span>
         </Button>
       </Box>

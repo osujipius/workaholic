@@ -84,11 +84,11 @@ export default function VerticalTabs() {
 
   return (
     <FadeIn>
-      <Container sx={{ mt: 5 }}>
-        <header className="section-header">
-          <p style={{ marginTop: "3em", marginBottom: "-1em" }}>
+      <div className="container mx-auto mt-20 font-mono">
+        <header>
+          <h3 className="text-4xl font-semibold tracking-tight text-center">
             Top Trending Skills to have
-          </p>
+          </h3>
         </header>
         <Box
           sx={{
@@ -119,8 +119,8 @@ export default function VerticalTabs() {
             }}
           >
             <Tab
+              className="!font-mono"
               sx={{
-                fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
                 fontWeight: "bold",
                 my: 2,
@@ -129,8 +129,8 @@ export default function VerticalTabs() {
               {...a11yProps(0)}
             />
             <Tab
+              className="!font-mono"
               sx={{
-                fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
                 fontWeight: "bold",
                 my: 2,
@@ -139,8 +139,8 @@ export default function VerticalTabs() {
               {...a11yProps(1)}
             />
             <Tab
+              className="!font-mono"
               sx={{
-                fontFamily: "'Lexend Deca', sans-serif",
                 fontSize: { md: "1.3em", xs: "1em" },
                 fontWeight: "bold",
                 my: 2,
@@ -152,8 +152,9 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={0}>
             {topSkills.map((topSkill) => (
               <Typography
+                key={topSkill}
+                className="!font-mono"
                 sx={{
-                  fontFamily: "'Lexend Deca', sans-serif",
                   fontSize: { md: "2em", xs: "1.5em" },
                   color: "#2e2e2e",
                 }}
@@ -165,8 +166,9 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={1}>
             {trendingSkills.map((trendingSkill) => (
               <Typography
+                key={trendingSkill}
+                className="!font-mono"
                 sx={{
-                  fontFamily: "'Lexend Deca', sans-serif",
                   fontSize: { md: "2em", xs: "1.5em" },
                   color: "#2e2e2e",
                 }}
@@ -178,8 +180,9 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={2}>
             {highIncomes.map((highIncome) => (
               <Typography
+                key={highIncome}
+                className="!font-mono"
                 sx={{
-                  fontFamily: "'Lexend Deca', sans-serif",
                   fontSize: { md: "2em", xs: "1.5em" },
                   color: "#2e2e2e",
                 }}
@@ -189,7 +192,7 @@ export default function VerticalTabs() {
             ))}
           </TabPanel>
         </Box>
-      </Container>
+      </div>
     </FadeIn>
   );
 }

@@ -1,254 +1,175 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import HeaderButton from "../atoms/HeaderButton";
-import { Link } from "@mui/material";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
-import LoginImg from "../../assets/login.svg";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FiMenu, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import DropDown from "../atoms/DropdownMenu";
+import Logo from "../atoms/Logo";
 
-const pages = ["Work", "About", "Blog"];
+const FlipNav = ({ user, logout }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between fixed !w-100 top-0 left-0 right-0 z-20">
+      <NavLeft setIsOpen={setIsOpen} />
+      <NavRight user={user} logout={logout} />
+      <NavMenu isOpen={isOpen} />
+    </nav>
+  );
+};
 
-const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const { logOut, user } = useAuth();
-  const navigate = useNavigate();
+const NavLeft = ({ setIsOpen }) => {
+  return (
+    <div className="flex items-center gap-6">
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="block text-2xl lg:hidden text-gray-950"
+        onClick={() => setIsOpen((pv) => !pv)}
+      >
+        <FiMenu />
+      </motion.button>
+      <Link to={"/"}>
+        <Logo />
+      </Link>
 
-  console.log(user);
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+      <NavLink text="Jobs" href={""} />
+      <NavLink text="Community" href={""} />
+      <NavLink text="Pricing" href={"/#pricing"} />
+      <NavLink text="About us" href={"/about"} />
+    </div>
+  );
+};
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+const NavLink = ({ text, href }) => {
+  return (
+    <HashLink
+      smooth
+      to={href}
+      className="hidden lg:block h-[30px] overflow-hidden font-medium cursor-pointer"
+    >
+      <motion.div whileHover={{ y: -30 }}>
+        <span className="flex items-center h-[30px] text-gray-500 font-mono font-semibold">
+          {text}
+        </span>
+        <span className="flex items-center h-[30px] text-[#317773] font-mono font-semibold">
+          {text}
+        </span>
+      </motion.div>
+    </HashLink>
+  );
+};
 
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-      navigate("/blog");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+const NavRight = ({ user, logout }) => {
   return (
     <>
-      <AppBar
-        position="sticky"
-        sx={{
-          background: "#fff",
-          borderBottom: "2px solid #ebebeb",
-          boxShadow: "none",
-        }}
-      >
-        <Container>
-          <Toolbar disableGutters>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "'Bebas Neue', cursive",
-                fontWeight: 700,
-                fontSize: "27px",
-                letterSpacing: ".3rem",
-                color: "#317773",
-              }}
+      {user === null ? (
+        <div className="flex items-center gap-4">
+          <Link to="/login">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 bg-[#317773] bg-clip-text text-transparent font-semibold rounded-md whitespace-nowrap font-mono"
             >
-              <Link
-                component={RouterLink}
-                to="/"
-                sx={{
-                  textDecoration: "none",
-                  color: "#317773",
-                }}
-              >
-                workaholic
-              </Link>
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                sx={{
-                  color: "#317773",
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography
-                      sx={{ fontFamily: "'Lexend Deca', sans-serif" }}
-                    >
-                      <Link
-                        component={RouterLink}
-                        style={{ textDecoration: "none", color: "#5e6d55" }}
-                        to={`/${page}`}
-                      >
-                        {page}
-                      </Link>
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Typography
-              variant="h4"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                mt: 1,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "'Bebas Neue', cursive",
-                fontWeight: 700,
-                letterSpacing: ".1rem",
-                color: "#317773",
-              }}
+              Sign in
+            </motion.button>
+          </Link>
+          <Link to="/register">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 bg-[#317773] text-white font-semibold rounded-md whitespace-nowrap font-mono"
             >
-              <Link
-                component={RouterLink}
-                to="/"
-                sx={{
-                  textDecoration: "none",
-                  color: "inherit",
-                }}
-              >
-                workaholic
-              </Link>
-            </Typography>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-                justifyContent: "end",
-                mr: 12,
-              }}
-            >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    mx: 2,
-                    display: "block",
-                    fontSize: "16px",
-                    fontFamily: "'Lexend Deca', sans-serif",
-                    textTransform: "capitalize",
-
-                    "&:hover": {
-                      background: "none",
-                    },
-                  }}
-                >
-                  <Link
-                    component={RouterLink}
-                    sx={{
-                      textDecoration: "none",
-                      color: "#5e6d55",
-                      p: 1,
-                      borderRadius: 2,
-                      transition: ".3s",
-                      "&:hover": { background: "#4ec4be", color: "#fff" },
-                    }}
-                    to={`/${page}`}
-                  >
-                    {page}
-                  </Link>
-                </Button>
-              ))}
-            </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              {user !== null ? (
-                <Button
-                  onClick={handleSignOut}
-                  sx={{
-                    background: "#265a57",
-                    fontFamily: "'Lexend Deca', sans-serif",
-                    fontSize: { xs: "small", xl: "medium" },
-                    borderRadius: 2,
-                    mt: { xs: 1 },
-                    transition: ".5s",
-                    color: "#fff",
-
-                    "&:hover": {
-                      color: "#fff",
-                      background: "#317773",
-                    },
-                  }}
-                >
-                  logOut
-                </Button>
-              ) : (
-                <Link
-                  component={RouterLink}
-                  to="/login"
-                  sx={{
-                    background: "#265a57",
-                    fontFamily: "'Lexend Deca', sans-serif",
-                    fontSize: { xs: "small", xl: "medium" },
-                    borderRadius: 2,
-                    mt: 1,
-                    transition: ".5s",
-                    color: "#fff",
-                    p: 1,
-                    textTransform: "capitalize",
-
-                    "&:hover": {
-                      color: "#fff",
-                      background: "#317773",
-                    },
-                  }}
-                >
-                  <img
-                    style={{ height: 20, width: 20 }}
-                    src={LoginImg}
-                    alt=""
-                  />
-                  LOGIN
-                </Link>
-              )}
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
+              Sign up
+            </motion.button>
+          </Link>
+        </div>
+      ) : (
+        <DropDown name={user?.email} img={user?.photoURL} logout={logout} />
+      )}
     </>
   );
 };
-export default ResponsiveAppBar;
+
+const NavMenu = ({ isOpen }) => {
+  return (
+    <motion.div
+      variants={menuVariants}
+      initial="closed"
+      animate={isOpen ? "open" : "closed"}
+      className="absolute left-0 right-0 flex flex-col gap-4 p-4 origin-top bg-white shadow-lg top-full"
+    >
+      <MenuLink text="Solutions" />
+      <MenuLink text="Community" />
+      <MenuLink text="Pricing" />
+      <MenuLink text="Company" />
+    </motion.div>
+  );
+};
+
+const MenuLink = ({ text }) => {
+  return (
+    <motion.a
+      variants={menuLinkVariants}
+      rel="nofollow"
+      href="#"
+      className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
+    >
+      <motion.span variants={menuLinkArrowVariants}>
+        <FiArrowRight className="h-[30px] text-gray-950" />
+      </motion.span>
+      <motion.div whileHover={{ y: -30 }}>
+        <span className="flex items-center h-[30px] text-gray-500">{text}</span>
+        <span className="flex items-center h-[30px] text-[#317773]">
+          {text}
+        </span>
+      </motion.div>
+    </motion.a>
+  );
+};
+
+const Header = ({ user, logout }) => {
+  return (
+    <div className="mb-10 bg-gray-50">
+      <FlipNav user={user} logout={logout} />
+    </div>
+  );
+};
+
+export default Header;
+
+const menuVariants = {
+  open: {
+    scaleY: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+  closed: {
+    scaleY: 0,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const menuLinkVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: -10,
+    opacity: 0,
+  },
+};
+
+const menuLinkArrowVariants = {
+  open: {
+    x: 0,
+  },
+  closed: {
+    x: -4,
+  },
+};

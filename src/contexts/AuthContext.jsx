@@ -13,6 +13,8 @@ const AuthContext = React.createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log(user);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -34,6 +36,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setIsLoggedIn(!!currentUser);
     });
     return () => {
       unsubscribe();
@@ -42,7 +45,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ googleSignIn, logOut, user, createUser, signIn }}
+      value={{ googleSignIn, logOut, user, createUser, signIn, isLoggedIn }}
     >
       {children}
     </AuthContext.Provider>

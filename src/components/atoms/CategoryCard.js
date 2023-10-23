@@ -31,11 +31,11 @@ export default function BasicCard({
       >
         <CardContent>
           <Typography
+            className="!font-mono"
             variant="h5"
             component="div"
             sx={{
               fontWeight: "bold",
-              fontFamily: "Merriweather",
               fontSize: 20,
               color: "#313131",
             }}
@@ -56,9 +56,14 @@ export default function BasicCard({
               }}
             >
               <Star fontSize="small" sx={{ mr: "0.3em", color: "gold" }} />
-              <Typography color="text.secondary"> {categoryRating} </Typography>
+              <Typography className="!font-mono" color="text.secondary">
+                {" "}
+                {categoryRating}{" "}
+              </Typography>
             </Box>
-            <Typography color="text.secondary">{jobCount}</Typography>
+            <Typography className="!font-mono" color="text.secondary">
+              {jobCount}
+            </Typography>
           </Box>
         </CardContent>
       </Card>

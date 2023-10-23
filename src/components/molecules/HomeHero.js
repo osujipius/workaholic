@@ -1,96 +1,122 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import HeroImg from "../../assets/hero-img.jpg";
-import BtnImg from "../../assets/btn-logo.png";
-import Typography from "@mui/material/Typography";
-import HomeButton from "../atoms/HomeButton";
-import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
+import { motion } from "framer-motion";
+import {
+  SiNike,
+  Si3M,
+  SiAbstract,
+  SiAdobe,
+  SiAirtable,
+  SiAmazon,
+  SiBox,
+  SiBytedance,
+  SiChase,
+  SiCloudbees,
+  SiBurton,
+  SiBmw,
+  SiHeroku,
+  SiBuildkite,
+  SiCouchbase,
+  SiDailymotion,
+  SiDeliveroo,
+  SiEpicgames,
+  SiGenius,
+  SiGodaddy,
+} from "react-icons/si";
+import Button from "../atoms/Button";
 
-export default function HomeHero() {
+const HomeHero = () => {
   return (
-    <>
-      <Container
-        sx={{
-          mt: { xs: "2rem" },
-        }}
-      >
-        <Box
-          sx={{
-            height: { md: 500, xs: "auto" },
-            display: "flex",
-            flexDirection: { xs: "column-reverse", md: "row" },
-          }}
-        >
-          <Box
-            sx={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: { xs: "center", md: "start" },
-              textAlign: { xs: "center", md: "start" },
-              mt: { xs: "1em", md: "0" },
-            }}
-          >
-            {" "}
-            <FadeIn>
-              <Typography
-                variant="p"
-                sx={{
-                  fontSize: { md: "22px", xs: "19px" },
-                  lineHeight: "26px",
-                  letterSpacing: "-.002em",
-                  fontWeight: 500,
-                  fontFamily: "'Lexend Deca', sans-serif",
-                  color: "#317773",
-                }}
-              >
-                Forget the old rules. You can have the best people. Right now.
-                Right here.
-              </Typography>
-            </FadeIn>
-            <FadeIn>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontFamily: "'Bebas Neue', cursive",
-                  color: "#201e20",
-                  fontSize: { md: "5rem", xs: "2.7rem" },
-                  marginTop: 3,
-                }}
-              >
-                The Best Jobs all in one Place
-              </Typography>
-            </FadeIn>
-            <FadeIn>
-              <HomeButton
-                text="Find Work"
-                style={{
-                  padding: "0.8em 2em",
-                  background: "#317773",
-                  margin: "2em 0",
-                }}
-                src={BtnImg}
-              />
-            </FadeIn>
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%" },
-              flex: 1,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              style={{ height: "100%", width: "95%" }}
-              src={HeroImg}
-              alt="Hero-Img"
-            />
-          </Box>
-        </Box>
-      </Container>
-    </>
+    <section className="pb-12 bg-white">
+      <div className="flex flex-col items-center w-full px-8 py-12 md:py-20">
+        <h1 className="max-w-2xl font-mono text-4xl font-semibold text-center md:text-6xl">
+          Your Personalized Job Search and Interview Solution
+        </h1>
+        <p className="max-w-xl my-6 font-mono text-center">
+          Discover the best openings at the best companies, learn valuable
+          interview skills, and conquer your career aspirations.
+        </p>
+        <Button title={"Try it"} />
+      </div>
+
+      <div className="flex overflow-hidden">
+        <TranslateWrapper>
+          <LogoItemsTop />
+        </TranslateWrapper>
+        <TranslateWrapper>
+          <LogoItemsTop />
+        </TranslateWrapper>
+        <TranslateWrapper>
+          <LogoItemsTop />
+        </TranslateWrapper>
+      </div>
+      <div className="flex mt-4 overflow-hidden">
+        <TranslateWrapper reverse>
+          <LogoItemsBottom />
+        </TranslateWrapper>
+        <TranslateWrapper reverse>
+          <LogoItemsBottom />
+        </TranslateWrapper>
+        <TranslateWrapper reverse>
+          <LogoItemsBottom />
+        </TranslateWrapper>
+      </div>
+    </section>
   );
-}
+};
+
+const TranslateWrapper = ({ children, reverse }) => {
+  return (
+    <motion.div
+      initial={{ translateX: reverse ? "-100%" : "0%" }}
+      animate={{ translateX: reverse ? "0%" : "-100%" }}
+      transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+      className="flex gap-4 px-2"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const LogoItem = ({ Icon }) => {
+  return (
+    <a
+      href="/"
+      rel="nofollow"
+      target="_blank"
+      className="flex items-center justify-center w-16 h-16 text-black transition-colors md:w-24 md:h-24 hover:bg-slate-200"
+    >
+      <Icon className="text-4xl md:text-5xl" />
+    </a>
+  );
+};
+
+const LogoItemsTop = () => (
+  <>
+    <LogoItem Icon={SiNike} />
+    <LogoItem Icon={Si3M} />
+    <LogoItem Icon={SiAbstract} />
+    <LogoItem Icon={SiAdobe} />
+    <LogoItem Icon={SiAirtable} />
+    <LogoItem Icon={SiAmazon} />
+    <LogoItem Icon={SiBox} />
+    <LogoItem Icon={SiBytedance} />
+    <LogoItem Icon={SiChase} />
+    <LogoItem Icon={SiCloudbees} />
+  </>
+);
+
+const LogoItemsBottom = () => (
+  <>
+    <LogoItem Icon={SiBmw} />
+    <LogoItem Icon={SiBurton} />
+    <LogoItem Icon={SiBuildkite} />
+    <LogoItem Icon={SiCouchbase} />
+    <LogoItem Icon={SiDailymotion} />
+    <LogoItem Icon={SiDeliveroo} />
+    <LogoItem Icon={SiEpicgames} />
+    <LogoItem Icon={SiGenius} />
+    <LogoItem Icon={SiGodaddy} />
+    <LogoItem Icon={SiHeroku} />
+  </>
+);
+
+export default HomeHero;
