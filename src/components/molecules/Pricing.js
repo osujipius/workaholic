@@ -3,16 +3,16 @@ import Button from "../atoms/Button";
 import { FadeIn } from "./helperFunctions/FadeIn";
 
 const includedFeatures = [
-  "Private forum access",
-  "Member resources",
+  "Interview prep",
+  "Resume & Cover letter Review",
   "Entry to annual conference",
-  "Official member t-shirt",
+  "Private forum access",
 ];
 
 export default function Pricing() {
   return (
     <FadeIn>
-      <div className="py-20 bg-white">
+      <div className="py-20 bg-white" id="pricing">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
           <div className="max-w-2xl mx-auto sm:text-center">
             <h2 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

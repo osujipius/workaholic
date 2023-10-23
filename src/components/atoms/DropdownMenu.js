@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 export default function DropDown({ name, img, logout }) {
   return (
     <Popover className="relative pr-2 font-mono font-semibold text-gray-500 sm:pr-10">
-      <Popover.Button className="inline-flex items-center text-sm leading-6 gap-x-1">
+      <Popover.Button className="inline-flex items-center text-sm leading-6 outline-none gap-x-1">
         <span className="text-base">Account</span>
         <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />
       </Popover.Button>

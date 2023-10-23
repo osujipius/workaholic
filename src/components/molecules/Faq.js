@@ -4,11 +4,21 @@ import { FadeIn } from "./helperFunctions/FadeIn";
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "Is searching for a job online the best job search method?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "In today’s job market, the internet is a core tool because the world has evolved and anyone you may need to connect with is available online. Yes, searching for a job online is a great job search strategy that is most useful when combined with other job search methods.",
   },
-  // More questions...
+  {
+    question: "Do I need a good CV to land a job?",
+    answer:
+      "Yes, Having a CV is the only way you can be noticed by employers. If you do not have a CV how would employers know that you have the skills and the ability to do the job? Of course, you cannot go around telling employers that you are a good fit without a CV. A good CV will attract employers that will invite you for a job interview, and then who knows you may just land the job. When you create a good CV, you will be on your way to a job interview in no time. In conclusion, a CV highlights why you are the best person for the job.",
+  },
+
+  {
+    question: "How long will it take me to land a job after graduation?",
+    answer:
+      "The time it will take you to land a job after graduation is not certain because different factors contribute to how soon it will take you to land a job. The earlier you get the right information and tools to land a job (CV, cover letter) the sooner you land the job.",
+  },
 ];
 
 export default function Faq() {

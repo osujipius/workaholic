@@ -84,9 +84,9 @@ export default function VerticalTabs() {
 
   return (
     <FadeIn>
-      <div className="font-mono container mx-auto mt-20">
+      <div className="container mx-auto mt-20 font-mono">
         <header>
-          <h3 className="text-center text-4xl font-semibold tracking-tight">
+          <h3 className="text-4xl font-semibold tracking-tight text-center">
             Top Trending Skills to have
           </h3>
         </header>
@@ -152,6 +152,7 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={0}>
             {topSkills.map((topSkill) => (
               <Typography
+                key={topSkill}
                 className="!font-mono"
                 sx={{
                   fontSize: { md: "2em", xs: "1.5em" },
@@ -165,6 +166,7 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={1}>
             {trendingSkills.map((trendingSkill) => (
               <Typography
+                key={trendingSkill}
                 className="!font-mono"
                 sx={{
                   fontSize: { md: "2em", xs: "1.5em" },
@@ -178,6 +180,7 @@ export default function VerticalTabs() {
           <TabPanel value={value} index={2}>
             {highIncomes.map((highIncome) => (
               <Typography
+                key={highIncome}
                 className="!font-mono"
                 sx={{
                   fontSize: { md: "2em", xs: "1.5em" },

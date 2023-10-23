@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/atoms/Logo";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
-  const { signIn, googleSignIn } = useAuth();
+  const { signIn, googleSignIn, isLoggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -28,6 +28,10 @@ export default function Login() {
       console.log(e.message);
     }
   };
+
+  useEffect(() => {
+    isLoggedIn ? navigate("/about") : navigate("/login");
+  }, [isLoggedIn, navigate]);
 
   return (
     <>

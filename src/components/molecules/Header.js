@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import DropDown from "../atoms/DropdownMenu";
 import Logo from "../atoms/Logo";
 
@@ -33,7 +34,7 @@ const NavLeft = ({ setIsOpen }) => {
 
       <NavLink text="Jobs" href={""} />
       <NavLink text="Community" href={""} />
-      <NavLink text="Pricing" href={""} />
+      <NavLink text="Pricing" href={"/#pricing"} />
       <NavLink text="About us" href={"/about"} />
     </div>
   );
@@ -41,7 +42,8 @@ const NavLeft = ({ setIsOpen }) => {
 
 const NavLink = ({ text, href }) => {
   return (
-    <Link
+    <HashLink
+      smooth
       to={href}
       className="hidden lg:block h-[30px] overflow-hidden font-medium cursor-pointer"
     >
@@ -53,7 +55,7 @@ const NavLink = ({ text, href }) => {
           {text}
         </span>
       </motion.div>
-    </Link>
+    </HashLink>
   );
 };
 

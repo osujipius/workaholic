@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Badge from "../atoms/Badge";
 import Logo from "../atoms/Logo";
 import SupportModal from "./SupportModal";
 
@@ -127,13 +128,18 @@ export default function Footer() {
                 </h3>
                 <ul className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
-                    <li key={item.name}>
+                    <li key={item.name} className="relative">
                       <a
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
                       </a>
+
+                      {item.name === "Interview prep" ||
+                        ("Resume review" && (
+                          <Badge title={"Pro"} className="ml-1 bottom-2" />
+                        ))}
                     </li>
                   ))}
                 </ul>
