@@ -29,9 +29,9 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    isLoggedIn ? navigate("/about") : navigate("/login");
-  }, [isLoggedIn, navigate]);
+  // useEffect(() => {
+  //   isLoggedIn ? navigate("/about") : navigate("/login");
+  // }, [isLoggedIn, navigate]);
 
   return (
     <>
