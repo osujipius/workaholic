@@ -8,7 +8,7 @@ import About from "./pages/aboutPage";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Jobs from "./pages/JobsPage";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
-import Login from "./pages/auth/login";
+// import Login from "./pages/auth/login";
 import NotFound from "./pages/notFoundPage";
 import Register from "./pages/auth/register";
 import Layout from "./components/layout/Layout";
@@ -25,7 +25,7 @@ export default function App() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
+                {/* <Route path="/login" element={<Login />} /> */}
                 <Route
                   path="/jobs"
                   element={
