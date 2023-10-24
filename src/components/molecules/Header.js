@@ -98,32 +98,34 @@ const NavMenu = ({ isOpen }) => {
       animate={isOpen ? "open" : "closed"}
       className="absolute left-0 right-0 flex flex-col gap-4 p-4 origin-top bg-white shadow-lg top-full"
     >
-      <MenuLink text="Solutions" />
-      <MenuLink text="Community" />
-      <MenuLink text="Pricing" />
-      <MenuLink text="Company" />
+      <MenuLink text="Jobs" href={"/"} />
+      <MenuLink text="Blog" href={"/"} />
+      <MenuLink text="Pricing" href={"/#pricing"} />
+      <MenuLink text="About us" href={"/about"} />
     </motion.div>
   );
 };
 
-const MenuLink = ({ text }) => {
+const MenuLink = ({ text, href }) => {
   return (
-    <motion.a
-      variants={menuLinkVariants}
-      rel="nofollow"
-      href="#"
-      className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
-    >
-      <motion.span variants={menuLinkArrowVariants}>
-        <FiArrowRight className="h-[30px] text-gray-950" />
-      </motion.span>
-      <motion.div whileHover={{ y: -30 }}>
-        <span className="flex items-center h-[30px] text-gray-500">{text}</span>
-        <span className="flex items-center h-[30px] text-[#317773]">
-          {text}
-        </span>
+    <HashLink smooth to={href}>
+      <motion.div
+        variants={menuLinkVariants}
+        className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
+      >
+        <motion.span variants={menuLinkArrowVariants}>
+          <FiArrowRight className="h-[30px] text-gray-950" />
+        </motion.span>
+        <motion.div whileHover={{ y: -30 }}>
+          <span className="flex items-center h-[30px] text-gray-500">
+            {text}
+          </span>
+          <span className="flex items-center h-[30px] text-[#317773]">
+            {text}
+          </span>
+        </motion.div>
       </motion.div>
-    </motion.a>
+    </HashLink>
   );
 };
 
