@@ -18,7 +18,7 @@ export default function AboutHero() {
         </div>
         <div className="max-w-2xl py-32 mx-auto sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="font-mono text-4xl font-semibold text-center tmax-w-2xl md:text-6xl">
+            <h1 className="max-w-2xl font-mono text-4xl font-semibold text-center md:text-6xl">
               Connecting Talent with Opportunity
             </h1>
             <p className="my-6 font-mono text-center">

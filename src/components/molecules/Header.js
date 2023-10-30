@@ -33,7 +33,7 @@ const NavLeft = ({ setIsOpen }) => {
       </Link>
 
       <NavLink text="Jobs" href={""} />
-      <NavLink text="Community" href={""} />
+      <NavLink text="Blog" href={"/blog"} />
       <NavLink text="Pricing" href={"/#pricing"} />
       <NavLink text="About us" href={"/about"} />
     </div>
