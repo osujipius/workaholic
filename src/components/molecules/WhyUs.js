@@ -6,6 +6,7 @@ import StatItem from "../atoms/StatItem";
 import StarsIcon from "@mui/icons-material/Stars";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import StatsImg from "./../../assets/statsimg.png";
 import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import { FadeIn } from "./helperFunctions/FadeIn.js";
@@ -74,11 +75,11 @@ export default function WhyUs() {
                 width: { xs: "43%" },
               }}
             >
-              {/* <img
+              <img
                 style={{ height: "90%", width: "95%" }}
                 src={StatsImg}
                 alt="stat-img"
-              /> */}
+              />
             </Box>
             <Box>
               <Typography
