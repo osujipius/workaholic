@@ -6,6 +6,9 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  connectAuthEmulator,
+  sendPasswordResetEmail,
+  confirmPasswordReset,
 } from "firebase/auth";
 import { auth } from "../firebase/config";
 
@@ -43,9 +46,28 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
+  const passwordReset = async (email) => {
+    return await sendPasswordResetEmail(auth, email);
+  };
+
+  const confirmThePasswordReset = async (oobCode, newPassword) => {
+    if (!oobCode && !newPassword) return;
+
+    return await confirmPasswordReset(auth, oobCode, newPassword);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ googleSignIn, logOut, user, createUser, signIn, isLoggedIn }}
+      value={{
+        googleSignIn,
+        logOut,
+        user,
+        createUser,
+        signIn,
+        isLoggedIn,
+        passwordReset,
+        confirmThePasswordReset,
+      }}
     >
       {children}
     </AuthContext.Provider>

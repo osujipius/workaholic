@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import { Transition } from "@headlessui/react";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
-export default function Notification({ show, setShow, message }) {
+export default function Notification({ show, setShow, message, error }) {
   return (
     <>
       <div
         aria-live="assertive"
-        className="fixed inset-0 flex items-end px-4 py-6 mt-20 pointer-events-none sm:items-start sm:p-6"
+        className="fixed inset-0 z-40 flex items-end px-4 py-6 pointer-events-none top-14 sm:items-start sm:p-6"
       >
         <div className="flex flex-col items-center w-full space-y-4 sm:items-end">
           <Transition
@@ -25,10 +25,14 @@ export default function Notification({ show, setShow, message }) {
               <div className="p-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <CheckCircleIcon
-                      className="w-6 h-6 text-green-400"
-                      aria-hidden="true"
-                    />
+                    {error ? (
+                      <XCircleIcon className="w-6 h-6 text-red-400" />
+                    ) : (
+                      <CheckCircleIcon
+                        className="w-6 h-6 text-green-400"
+                        aria-hidden="true"
+                      />
+                    )}
                   </div>
                   <div className="ml-3 w-0 flex-1 pt-0.5">
                     <p className="text-sm font-medium text-gray-900">

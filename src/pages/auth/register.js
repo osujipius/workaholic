@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Register() {
   const { googleSignIn, isLoggedIn, createUser } = useAuth();
@@ -58,7 +58,7 @@ export default function Register() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                    className="block w-full px-3 outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -77,9 +77,19 @@ export default function Register() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                    className="block w-full  px-3 outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
                   />
                 </div>
+              </div>
+
+              <div className="flex justify-end text-sm leading-6">
+                <p className="font-mono text-gray-900">Already a user?</p>
+                <a
+                  href="/login"
+                  className="font-semibold text-[#317773] hover:text-[#317773] font-mono ml-1"
+                >
+                  Login
+                </a>
               </div>
               <div>
                 <button
@@ -90,6 +100,7 @@ export default function Register() {
                 </button>
               </div>
             </form>
+
             <div>
               <div className="relative mt-10">
                 <div

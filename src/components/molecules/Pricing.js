@@ -1,6 +1,7 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
-import Button from "../atoms/Button";
 import { FadeIn } from "./helperFunctions/FadeIn";
+import { PaystackButton } from "react-paystack";
+import Button from "../atoms/Button";
 
 const includedFeatures = [
   "Interview prep",
@@ -9,7 +10,7 @@ const includedFeatures = [
   "Private forum access",
 ];
 
-export default function Pricing() {
+export default function Pricing({ componentProps, user, triggerAlert }) {
   return (
     <FadeIn>
       <div className="py-20 bg-white" id="pricing">
@@ -57,13 +58,21 @@ export default function Pricing() {
                   </p>
                   <p className="flex items-baseline justify-center mt-6 gap-x-2">
                     <span className="text-5xl font-bold tracking-tight text-gray-900">
-                      $30
+                      ₦1500
                     </span>
                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                      USD
+                      NGN
                     </span>
                   </p>
-                  <Button title={"Get access"} />
+                  {user ? (
+                    <PaystackButton
+                      {...componentProps}
+                      className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono"
+                    />
+                  ) : (
+                    <Button title={"Get access"} onClick={triggerAlert} />
+                  )}
+
                   <p className="mt-6 font-mono text-xs leading-5 text-gray-600">
                     Invoices and receipts available for easy company
                     reimbursement

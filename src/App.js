@@ -8,10 +8,12 @@ import About from "./pages/aboutPage";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Jobs from "./pages/JobsPage";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
-import Login from "./pages/login";
+import Login from "./pages/auth/login";
 import NotFound from "./pages/notFoundPage";
-import Register from "./pages/register";
+import Register from "./pages/auth/register";
 import Layout from "./components/layout/Layout";
+import ForgotPassword from "./pages/auth/forgotPassword";
+import PasswordReset from "./pages/auth/passwordReset";
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="forgot-password" element={<ForgotPassword />} />
+                <Route path="emulator/action" element={<PasswordReset />} />
                 <Route
                   path="/jobs"
                   element={

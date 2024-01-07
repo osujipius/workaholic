@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../components/atoms/Logo";
-import { useAuth } from "../contexts/AuthContext";
+import Logo from "../../components/atoms/Logo";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
   const { signIn, googleSignIn, isLoggedIn } = useAuth();
@@ -61,7 +61,7 @@ export default function Login() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                    className="block w-full px-3 outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -81,21 +81,19 @@ export default function Login() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#317773] sm:text-sm sm:leading-6 outline-none"
                   />
                 </div>
               </div>
 
-              {/* <div className="flex items-center justify-between">
-                <div className="text-sm leading-6">
-                  <a
-                    href="/"
-                    className="font-semibold text-[#317773] hover:text-[#317773] font-mono"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
-              </div> */}
+              <div className="text-sm leading-6 text-right">
+                <a
+                  href="/forgot-password"
+                  className="font-semibold text-[#317773] hover:text-[#317773] font-mono"
+                >
+                  Forgot password?
+                </a>
+              </div>
 
               <div>
                 <button
