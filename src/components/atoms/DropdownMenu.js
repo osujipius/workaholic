@@ -1,8 +1,15 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "react-router-dom";
 
 export default function DropDown({ name, img, logout }) {
+  const navigate = useNavigate();
+
+  function signOut() {
+    logout();
+    navigate("/");
+  }
   return (
     <Popover className="relative pr-2 font-mono font-semibold text-gray-500 sm:pr-10">
       <Popover.Button className="inline-flex items-center text-sm leading-6 outline-none gap-x-1">
@@ -30,7 +37,7 @@ export default function DropDown({ name, img, logout }) {
             )}
             <span>{name}</span>
             <button
-              onClick={logout}
+              onClick={signOut}
               className="bg-[#317773] text-white rounded-md px-3 py-1"
             >
               Logout

@@ -2,6 +2,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import { FadeIn } from "./helperFunctions/FadeIn";
 import { PaystackButton } from "react-paystack";
 import Button from "../atoms/Button";
+import { Link } from "react-router-dom";
 
 const includedFeatures = [
   "Interview prep",
@@ -64,13 +65,20 @@ export default function Pricing({ componentProps, user, triggerAlert }) {
                       NGN
                     </span>
                   </p>
-                  {user ? (
+                  {user !== null ? (
                     <PaystackButton
                       {...componentProps}
                       className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono"
                     />
                   ) : (
-                    <Button title={"Get access"} onClick={triggerAlert} />
+                    <div className="mt-1">
+                      <Link
+                        to="/login"
+                        className="bg-[#317773] text-white text-base md:text-lg font-semibold px-8 py-2 shadow-[3px_3px_0_black] hover:shadow-[1px_1px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all font-mono"
+                      >
+                        Get access
+                      </Link>
+                    </div>
                   )}
 
                   <p className="mt-6 font-mono text-xs leading-5 text-gray-600">

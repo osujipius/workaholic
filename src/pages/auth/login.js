@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/atoms/Logo";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Login() {
-  const { signIn, googleSignIn, isLoggedIn } = useAuth();
+  const { signIn, googleSignIn, user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,9 +14,11 @@ export default function Login() {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+      console.log(user, "user");
     } catch (error) {
       console.log(error);
     }
+    console.log(user, "user");
   };
 
   const handleSubmit = async (e) => {
@@ -30,8 +33,8 @@ export default function Login() {
   };
 
   useEffect(() => {
-    isLoggedIn ? navigate("/about") : navigate("/login");
-  }, [isLoggedIn, navigate]);
+    user !== null ? navigate("/about") : navigate("/login");
+  }, [user, navigate]);
 
   return (
     <>
@@ -87,12 +90,12 @@ export default function Login() {
               </div>
 
               <div className="text-sm leading-6 text-right">
-                <a
-                  href="/forgot-password"
+                <Link
+                  to="/forgot-password"
                   className="font-semibold text-[#317773] hover:text-[#317773] font-mono"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
 
               <div>

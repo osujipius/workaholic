@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Register() {
-  const { googleSignIn, isLoggedIn, createUser } = useAuth();
+  const { googleSignIn, user, createUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -28,8 +29,8 @@ export default function Register() {
   };
 
   useEffect(() => {
-    isLoggedIn ? navigate("/about") : navigate("/register");
-  }, [isLoggedIn, navigate]);
+    user !== null ? navigate("/about") : navigate("/register");
+  }, [user, navigate]);
 
   return (
     <>
@@ -84,12 +85,12 @@ export default function Register() {
 
               <div className="flex justify-end text-sm leading-6">
                 <p className="font-mono text-gray-900">Already a user?</p>
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   className="font-semibold text-[#317773] hover:text-[#317773] font-mono ml-1"
                 >
                   Login
-                </a>
+                </Link>
               </div>
               <div>
                 <button

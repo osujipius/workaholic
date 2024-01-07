@@ -32,7 +32,7 @@ const NavLeft = ({ setIsOpen }) => {
         <Logo />
       </Link>
 
-      <NavLink text="Jobs" href={""} />
+      <NavLink text="Jobs" href={"/jobs"} />
       <NavLink text="Blog" href={"/blog"} />
       <NavLink text="Pricing" href={"/#pricing"} />
       <NavLink text="About us" href={"/about"} />

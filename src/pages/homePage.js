@@ -25,12 +25,11 @@ export default function HomePage() {
     email: user?.email,
     amount: 150000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: "pk_test_ad2882c165a0f5842afea2f28c68f9e971426a54",
-    // currency: "USD",
   };
 
   const handlePaystackSuccessAction = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
     console.log(reference);
+    localStorage.setItem("trans", reference?.transaction);
   };
 
   // you can call this function anything
@@ -48,7 +47,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HomeHero />
+      <HomeHero user={user} />
       <HomeStats />
       <HomeJobCategory />
       <TrendingTab />

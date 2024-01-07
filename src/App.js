@@ -14,6 +14,7 @@ import Register from "./pages/auth/register";
 import Layout from "./components/layout/Layout";
 import ForgotPassword from "./pages/auth/forgotPassword";
 import PasswordReset from "./pages/auth/passwordReset";
+import GetStarted from "./pages/getStarted";
 
 export default function App() {
   return (
@@ -36,6 +37,14 @@ export default function App() {
                     <ProtectedRoute>
                       <Jobs />
                     </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/get-started"
+                  element={
+                    // <ProtectedRoute>
+                    <GetStarted />
+                    // </ProtectedRoute>
                   }
                 />
                 <Route path="*" element={<NotFound />} />

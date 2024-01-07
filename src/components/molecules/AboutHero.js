@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Button from "../atoms/Button";
 
-export default function AboutHero() {
+export default function AboutHero({ user }) {
   return (
     <div className="bg-white">
       <div className="relative px-6 isolate pt-14 lg:px-8">
@@ -27,7 +28,9 @@ export default function AboutHero() {
               reach.
             </p>
             <div className="flex items-center justify-center mt-10 gap-x-6">
-              <Button title={"Try it"} />
+              <Link to={user !== null ? "/get-started" : "/login"}>
+                <Button title={"Try it"} />
+              </Link>
             </div>
           </div>
         </div>

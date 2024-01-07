@@ -21,9 +21,11 @@ import {
   SiGenius,
   SiGodaddy,
 } from "react-icons/si";
+import { Link } from "react-router-dom";
+
 import Button from "../atoms/Button";
 
-const HomeHero = () => {
+const HomeHero = ({ user }) => {
   return (
     <section className="pb-12 bg-white">
       <div className="flex flex-col items-center w-full px-8 py-12 md:py-20">
@@ -34,7 +36,9 @@ const HomeHero = () => {
           Discover the best openings at the best companies, learn valuable
           interview skills, and conquer your career aspirations.
         </p>
-        <Button title={"Try it"} />
+        <Link to={user !== null ? "/get-started" : "/login"}>
+          <Button title={"Try it"} />
+        </Link>
       </div>
 
       <div className="flex overflow-hidden">
