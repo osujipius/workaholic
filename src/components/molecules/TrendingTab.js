@@ -4,7 +4,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import { FadeIn } from "../molecules/helperFunctions/FadeIn.js";
 
 const topSkills = [
@@ -84,7 +83,7 @@ export default function VerticalTabs() {
 
   return (
     <FadeIn>
-      <div className="container mx-auto mt-20 font-mono">
+      <div className="container mx-auto mt-5 font-mono md:mt-20">
         <header>
           <h3 className="text-4xl font-semibold tracking-tight text-center">
             Top Trending Skills to have

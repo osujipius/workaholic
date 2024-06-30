@@ -6,12 +6,14 @@ import HomeReview from "../components/molecules/Reviews";
 import TrendingTab from "../components/molecules/TrendingTab";
 import Faq from "../components/molecules/Faq";
 import Pricing from "../components/molecules/Pricing";
-import { useAuth } from "../contexts/AuthContext";
+import { useUser } from "../contexts/UserContext";
 import Notification from "../components/atoms/Notification";
 
 export default function HomePage() {
-  const { user } = useAuth();
+  const { user } = useUser();
   const [showNotification, setShowNotification] = useState(false);
+
+  console.log(user);
 
   const triggerAlert = () => {
     setShowNotification(true);

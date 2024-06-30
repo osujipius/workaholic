@@ -5,7 +5,6 @@ function BackToTopButton() {
   return (
     <a href="#" className="back-to-top active">
       <i>
-        {" "}
         <ArrowCircleUpIcon />{" "}
       </i>
     </a>

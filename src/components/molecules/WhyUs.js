@@ -18,7 +18,7 @@ export default function WhyUs() {
         <Container
           sx={{
             height: "auto",
-            mt: 15,
+            mt: { xs: 2, md: 15 },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
           }}

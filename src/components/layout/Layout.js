@@ -1,22 +1,18 @@
 import React from "react";
-import { useAuth } from "../../contexts/AuthContext";
+import { useUser } from "../../contexts/UserContext";
 import Footer from "../molecules/Footer";
 import Header from "../molecules/Header";
 
 export default function Layout({ children }) {
-  const { logOut, user } = useAuth();
+  const { logOut, user } = useUser();
 
   const handleSignOut = async () => {
-    try {
-      await logOut();
-    } catch (error) {
-      console.log(error);
-    }
+    await logOut();
   };
 
   return (
     <>
-      <Header user={user} logout={handleSignOut} />
+      <Header user={user} logOut={handleSignOut} />
       {children}
       <Footer />
     </>

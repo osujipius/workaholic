@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 
 import Button from "../atoms/Button";
 
-const HomeHero = ({ user }) => {
+const HomeHero = () => {
   return (
     <section className="pb-12 bg-white">
       <div className="flex flex-col items-center w-full px-8 py-12 md:py-20">
@@ -36,12 +36,12 @@ const HomeHero = ({ user }) => {
           Discover the best openings at the best companies, learn valuable
           interview skills, and conquer your career aspirations.
         </p>
-        <Link to={user !== null ? "/get-started" : "/login"}>
+        <Link to={"/get-started"}>
           <Button title={"Try it"} />
         </Link>
       </div>
 
-      <div className="flex overflow-hidden">
+      <div className="flex translate-y-[50%] rotate-[7deg] scale-110 overflow-hidden border-y-4 border-neutral-900 bg-neutral-50">
         <TranslateWrapper>
           <LogoItemsTop />
         </TranslateWrapper>
@@ -52,7 +52,7 @@ const HomeHero = ({ user }) => {
           <LogoItemsTop />
         </TranslateWrapper>
       </div>
-      <div className="flex mt-4 overflow-hidden">
+      <div className="flex -translate-y-[50%] -rotate-[7deg] scale-110 overflow-hidden border-y-4 border-neutral-900 bg-neutral-50">
         <TranslateWrapper reverse>
           <LogoItemsBottom />
         </TranslateWrapper>

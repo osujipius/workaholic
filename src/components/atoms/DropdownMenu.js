@@ -2,18 +2,23 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useNavigate } from "react-router-dom";
+import { Avatar } from "@mui/material";
 
-export default function DropDown({ name, img, logout }) {
+export default function DropDown({ logOut, user }) {
   const navigate = useNavigate();
+  console.log(user);
 
   function signOut() {
-    logout();
+    logOut();
     navigate("/");
   }
   return (
     <Popover className="relative pr-2 font-mono font-semibold text-gray-500 sm:pr-10">
       <Popover.Button className="inline-flex items-center text-sm leading-6 outline-none gap-x-1">
-        <span className="text-base">Account</span>
+        <Avatar src={user?.user_metadata?.avatar_url || ""} />
+        <span className="text-base">
+          {user?.user_metadata?.name || user?.user_metadata?.email}
+        </span>
         <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />
       </Popover.Button>
 
@@ -26,16 +31,8 @@ export default function DropDown({ name, img, logout }) {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <Popover.Panel className="absolute z-10 flex w-screen px-4 mt-5 -translate-x-1/2 max-w-min">
-          <div className="w-56 p-4 text-sm font-semibold leading-6 text-gray-500 bg-white shadow-lg shrink rounded-xl ring-1 ring-gray-900/5">
-            {img && (
-              <img
-                src={img}
-                alt="user-img"
-                className="object-contain w-10 h-10 rounded-full"
-              />
-            )}
-            <span>{name}</span>
+        <Popover.Panel className="absolute z-10 flex w-screen px-4 mt-5 max-w-min">
+          <div className="flex justify-center p-4 text-sm font-semibold leading-6 text-gray-500 bg-white shadow-lg w-36 shrink rounded-xl ring-1 ring-gray-900/5">
             <button
               onClick={signOut}
               className="bg-[#317773] text-white rounded-md px-3 py-1"

@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
 import {
   BriefcaseIcon,
+  ClipboardDocumentIcon,
   DocumentCheckIcon,
+  PencilSquareIcon,
   ReceiptRefundIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
 import Badge from "../components/atoms/Badge";
-import { useAuth } from "../contexts/AuthContext";
+import { useUser } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 
 const actions = [
   {
-    title: "Find jobs",
+    title: "Post job openings",
     href: "#",
+    icon: PencilSquareIcon,
+    iconForeground: "text-blue-700",
+    iconBackground: "bg-blue-50",
+  },
+  {
+    title: "Find jobs",
+    href: "/jobs",
     icon: BriefcaseIcon,
     iconForeground: "text-teal-700",
     iconBackground: "bg-teal-50",
@@ -23,7 +32,6 @@ const actions = [
     icon: DocumentCheckIcon,
     iconForeground: "text-purple-700",
     iconBackground: "bg-purple-50",
-    comingSoon: true,
   },
   {
     title: "Schedule a one-on-one",
@@ -31,7 +39,6 @@ const actions = [
     icon: UsersIcon,
     iconForeground: "text-sky-700",
     iconBackground: "bg-sky-50",
-    comingSoon: true,
   },
   {
     title: "Feedback report",
@@ -39,7 +46,13 @@ const actions = [
     icon: ReceiptRefundIcon,
     iconForeground: "text-rose-700",
     iconBackground: "bg-rose-50",
-    comingSoon: true,
+  },
+  {
+    title: "Interview prep materials",
+    href: "#",
+    icon: ClipboardDocumentIcon,
+    iconForeground: "text-yellow-700",
+    iconBackground: "bg-yellow-50",
   },
 ];
 
@@ -48,7 +61,7 @@ function classNames(...classes) {
 }
 
 export default function GetStarted() {
-  const { user } = useAuth();
+  const { user } = useUser();
   const [transValue, setTransValue] = useState("");
 
   useEffect(() => {
@@ -65,7 +78,7 @@ export default function GetStarted() {
 
   return (
     <div className="flex items-center justify-center min-h-screen py-20 font-mono">
-      <div className="overflow-hidden bg-gray-200 divide-y divide-gray-200 rounded-lg shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0 max-w-[850px] w-11/12 pt-1">
+      <div className="w-11/12 pt-1 overflow-hidden bg-gray-200 divide-y divide-gray-200 rounded-lg shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
         {actions.map((action) => (
           <div
             key={action.title}

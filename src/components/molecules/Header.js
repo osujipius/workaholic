@@ -6,13 +6,13 @@ import { HashLink } from "react-router-hash-link";
 import DropDown from "../atoms/DropdownMenu";
 import Logo from "../atoms/Logo";
 
-const FlipNav = ({ user, logout }) => {
+const FlipNav = ({ user, logOut }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between fixed !w-100 top-0 left-0 right-0 z-20">
       <NavLeft setIsOpen={setIsOpen} />
-      <NavRight user={user} logout={logout} />
-      <NavMenu isOpen={isOpen} />
+      <NavRight user={user} logOut={logOut} />
+      <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );
 };
@@ -59,38 +59,29 @@ const NavLink = ({ text, href }) => {
   );
 };
 
-const NavRight = ({ user, logout }) => {
+const NavRight = ({ user, logOut }) => {
   return (
     <>
       {user === null ? (
-        <div className="flex items-center gap-4">
+        <div>
           <Link to="/login">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 bg-[#317773] bg-clip-text text-transparent font-semibold rounded-md whitespace-nowrap font-mono"
-            >
-              Sign in
-            </motion.button>
-          </Link>
-          <Link to="/register">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 bg-[#317773] text-white font-semibold rounded-md whitespace-nowrap font-mono"
             >
-              Sign up
+              Sign in
             </motion.button>
           </Link>
         </div>
       ) : (
-        <DropDown name={user?.email} img={user?.photoURL} logout={logout} />
+        <DropDown user={user} logOut={logOut} />
       )}
     </>
   );
 };
 
-const NavMenu = ({ isOpen }) => {
+const NavMenu = ({ isOpen, setIsOpen }) => {
   return (
     <motion.div
       variants={menuVariants}
@@ -98,18 +89,19 @@ const NavMenu = ({ isOpen }) => {
       animate={isOpen ? "open" : "closed"}
       className="absolute left-0 right-0 flex flex-col gap-4 p-4 origin-top bg-white shadow-lg top-full"
     >
-      <MenuLink text="Jobs" href={"/"} />
-      <MenuLink text="Blog" href={"/"} />
-      <MenuLink text="Pricing" href={"/#pricing"} />
-      <MenuLink text="About us" href={"/about"} />
+      <MenuLink setIsOpen={setIsOpen} text="Jobs" href={"/jobs"} />
+      <MenuLink setIsOpen={setIsOpen} text="Blog" href={"/blog"} />
+      <MenuLink setIsOpen={setIsOpen} text="Pricing" href={"/#pricing"} />
+      <MenuLink setIsOpen={setIsOpen} text="About us" href={"/about"} />
     </motion.div>
   );
 };
 
-const MenuLink = ({ text, href }) => {
+const MenuLink = ({ text, href, setIsOpen }) => {
   return (
     <HashLink smooth to={href}>
       <motion.div
+        onClick={() => setIsOpen(false)}
         variants={menuLinkVariants}
         className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
       >
@@ -129,10 +121,10 @@ const MenuLink = ({ text, href }) => {
   );
 };
 
-const Header = ({ user, logout }) => {
+const Header = ({ user, logOut }) => {
   return (
     <div className="mb-10 bg-gray-50">
-      <FlipNav user={user} logout={logout} />
+      <FlipNav user={user} logOut={logOut} />
     </div>
   );
 };

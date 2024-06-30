@@ -3,10 +3,10 @@ import { FadeIn } from "../components/molecules/helperFunctions/FadeIn";
 import NewsLetter from "../components/molecules/Newsletter";
 import Stats from "../components/molecules/Stats";
 import TrustedBy from "../components/molecules/TrustedBy";
-import { useAuth } from "../contexts/AuthContext";
+import { useUser } from "../contexts/UserContext";
 
 export default function About() {
-  const { user } = useAuth();
+  const { user } = useUser();
   return (
     <>
       <FadeIn>

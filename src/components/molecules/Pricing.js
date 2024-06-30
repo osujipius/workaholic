@@ -1,7 +1,6 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
 import { FadeIn } from "./helperFunctions/FadeIn";
 import { PaystackButton } from "react-paystack";
-import Button from "../atoms/Button";
 import { Link } from "react-router-dom";
 
 const includedFeatures = [
@@ -14,7 +13,7 @@ const includedFeatures = [
 export default function Pricing({ componentProps, user, triggerAlert }) {
   return (
     <FadeIn>
-      <div className="py-20 bg-white" id="pricing">
+      <div className="bg-white md:py-20" id="pricing">
         <div className="px-6 mx-auto max-w-7xl lg:px-8">
           <div className="max-w-2xl mx-auto sm:text-center">
             <h2 className="font-mono text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

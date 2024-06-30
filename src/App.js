@@ -5,21 +5,20 @@ import BackToTopButton from "./components/atoms/backToTopButton/BackToTopButton.
 import BlogPage from "./pages/blogPage";
 import ScrollToTop from "./components/molecules/helperFunctions/ScrollToTop.js";
 import About from "./pages/aboutPage";
-import { AuthProvider } from "./contexts/AuthContext.jsx";
-import Jobs from "./pages/JobsPage";
+import { UserProvider } from "./contexts/UserContext.jsx";
+import Jobs from "./pages/jobs";
 import { ProtectedRoute } from "./pages/ProtectedRoute.js";
 import Login from "./pages/auth/login";
 import NotFound from "./pages/notFoundPage";
-import Register from "./pages/auth/register";
 import Layout from "./components/layout/Layout";
-import ForgotPassword from "./pages/auth/forgotPassword";
-import PasswordReset from "./pages/auth/passwordReset";
 import GetStarted from "./pages/getStarted";
+import JobPage from "./pages/jobs/jobPage";
+import ProfilePage from "./pages/profilePage";
 
 export default function App() {
   return (
     <>
-      <AuthProvider>
+      <UserProvider>
         <BrowserRouter>
           <Layout>
             <ScrollToTop>
@@ -27,18 +26,10 @@ export default function App() {
                 <Route path="/" element={<Landing />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="forgot-password" element={<ForgotPassword />} />
-                <Route path="emulator/action" element={<PasswordReset />} />
-                <Route
-                  path="/jobs"
-                  element={
-                    <ProtectedRoute>
-                      <Jobs />
-                    </ProtectedRoute>
-                  }
-                />
+                <Route path="/jobs" element={<Jobs />} />
+                <Route path="/jobs/:slug" element={<JobPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route
                   path="/get-started"
                   element={
@@ -53,7 +44,7 @@ export default function App() {
             <BackToTopButton />
           </Layout>
         </BrowserRouter>
-      </AuthProvider>
+      </UserProvider>
     </>
   );
 }
